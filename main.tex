@@ -1,0 +1,111 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[twoside,11pt]{report}
+\usepackage[a4paper, total={5.6in, 8.1in}]{geometry}
+
+\usepackage{graphicx}
+
+\usepackage{amssymb, amsmath}
+\usepackage[hyperindex,breaklinks,colorlinks,linkcolor=magenta,anchorcolor=blue,citecolor=blue]{hyperref} 
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[CE]{\footnotesize{\nouppercase\leftmark}}
+\fancyhead[CO]{\footnotesize{\nouppercase\rightmark}}
+%\fancyhead[RE,LO]{Guides and tutorials}
+%\fancyfoot[CE,CO]{\leftmark}
+\fancyhead[LE,RO]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\usepackage{etoolbox}
+\makeatletter
+%\ patchcmd{<cmd>}{<search>}{<replace>}{<success>}{<failure>}
+\patchcmd{\chaptermark}{\@chapapp\ }{}{}{}
+\makeatother
+
+\usepackage{titlesec}
+
+\makeatletter
+\def\@makechapterhead#1{%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+        {\fontsize{19pt}{25pt}\bfseries \thechapter.\ % <-- Chapter # (without "Chapter")
+    \fi
+    \interlinepenalty\@M
+    #1\par\nobreak% <------------------ Chapter title
+    \vskip 100\p@% <------------------ Space between chapter title and first paragraph
+  }}}
+\makeatother
+
+
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\ii{\text{i}}
+\def\dd{\text{d}}
+
+\renewcommand\theequation{{\thesection}%
+.{\arabic{equation}}}
+
+\usepackage{bm}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+\allowdisplaybreaks
+
+\usepackage{setspace} 
+
+
+
+\title{Quantum Field Theory in Condensed Matter Physics}
+\author{Naoto Nagaosa}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\setcounter{page}{0}
+\setstretch{1.03}
+
+\input{chapter1}
+\input{section1.1}
+\section[Many-Particle Quantum Mechanics: Second Quantization]{Many-Particle Quantum Mechanics: \\ Second Quantization}
+
+In this section, we consider the many-particle case. In this case the wave function is a function of the time $t$ and $3N$-dimensional coordinate space (for a moment, we omit the spin dependence)
+\be
+\langle\bm r_1,\cdots,\bm r_N|\psi(t)\rangle=\psi(\bm r_1,\cdots,\bm r_N,t)
+\ee
+Unlike classical mechanics, in many-particle quantum mechanics it is impossible in principle to distinguish particles of the same species. We cannot think about indistinguishable particles as rigid bodies; however, it should be possible to get an idea of it with the following metaphor. \\
+\indent Think about a luminous advertisement screen. By switching the lamps on and off at every point of the surface, it is possible to create a moving picture. Places that are illuminated have more energy than the other places, and therefore there should be a particle. 
+
+\section{The Variation Principle and the Noether Theorem}
+\section{Quantization of the Electromagnetic Field}
+
+\chapter{Quantization with Path Integral Methods}
+\section{Single-Particle Quantum Mechanics and Path Integrals}
+\section{The Path Integral for Bosons}
+\section{The Path Integral for Fermions}
+\section{The Path Integral for the Gauge Field}
+\section{The Path Integral for the Spin System}
+\chapter{Symmetry Breaking and Phase Transition}
+\section{Spontaneous Symmetry Breaking}
+\section{The Goldstone Mode}
+\section{Kosterlitz-Thouless Transition}
+\section{Lattice Gauge Theory and the Confinement Problem}
+\chapter{Simple Examples for the Application of Field Theory}
+\section{The RPA Theory of a Coulomb Gas}
+\section{The Bogoliubov Theory of Superfluidity}
+\chapter{Problems Related to Superconductivity}
+\section{Superconductivity and Path Integrals}
+\section{Macroscopic Quantum Effects and Dissipation: The Josephson Junction}
+\section{The Superconductor-Insulator Phase Transition in Two Dimensions and the Quantum Vortices}
+\chapter{Quantum Hall Liquid\\ and the Chern-Simons Gauge Field}
+\section{Two-Dimensional Electron System}
+\section{Effective Theory of a Quantum Hall Liquid}
+\section{The Derivation of the Laughlin Wave Function}
+\appendix
+\chapter{Appendix}
+\section{Fourier Transformation}
+\section{Functionals and the Variation Principle}
+\section{Quantum Statistical Mechanics}
+
+\end{document}  

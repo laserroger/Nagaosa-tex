@@ -1,0 +1,383 @@
+%!TEX root = ./main.tex
+
+\section{Single-Particle Quantum Mechanics}
+
+We start by recalling some facts about single-particle quantum mechanics. All points that will be mentioned here will again become important when proceeding to quantum field theory. 
+
+The equation of motion of the single-particle system is given by the\!\! {\color{white}{\-}}Schrödinger equation:
+
+\be\label{eq1.1.1}
+\ii\hbar\frac{\partial\psi({\bm r},t)}{\partial t}=\hat{H}\psi({\bm r},t)=\left[\frac{\hat{\bm p}^2}{2m}+V(\hat{\bm r})\right]\psi({\bm r},t)
+\ee
+$\psi({\bm r},t)$ is the so-called wave function, depending on the space coordinates $\bm r$ and the time $t$. $\hat H$ is the so-called Hamiltonian operator, creating a new wave function $\hat H\psi({\bm r},t)$ by acting on the wave function $\psi({\bm r},t)$. In what follows, operators are assigned by a hat, except for obvious cases where this notation will be omitted. $\hat{\bm p}$ and $\hat{\bm r}$ are three-component vector operators that represent the \,momentum \,and \,space \,coordinate \,of \,the \,particle, \,respectively. ${\hat{\bm p}}^2/2m$ \-
+is the kinetic energy, $V(\hat{\bm r})$ the potential energy, and its sum is the total energy of the particle, called the Hamiltonian operator $\hat H$. Equation \eqref{eq1.1.1} signifies that the time development of the wave function is determined by the Hamiltonian operator $\hat H$. By defining the exponential $\exp(\hat A)$ pf an operator by
+
+\be\label{eq1.1.2}
+\exp(\hat A)=\sum_{n=0}^\infty \frac{1}{n!}(\hat A)^n
+\ee
+its solution can be written as
+\be\label{eq1.1.3}
+\psi({\bm r},t)\exp\left(-\frac{i}{\hbar}\hat Ht\right)\psi({\bm r},0)
+\ee
+
+In quantum mechanics, the wave function is interpreted in terms of probability. The square of the absolute value of the wave function
+\be
+P({\bm r},t)=|\psi({\bm r},t)|^2
+\ee
+is interpreted as the probability of detecting the particle at time $t$ at the coordinate $\bm r$. Therefore, because the sum (integral) of the probability over the whole space is $1$, we obtain the normalization condition of the wave function:
+\be
+\int\dd^3{\bm r}P({\bm r},t)=\int\dd^3{\bm r}|\psi({\bm r},t)|^2=1
+\ee
+
+We will now explain the matrix formulation of quantum mechanics. We interpret the function $f({\bm r})$ as a vector in the Hilbert space (the vector space of function) and write $|f\rangle$ for the state that the function represents. Doing so, the operator $\hat A$ acting \,on \,the \,vectors \,in \,this space generates \,a \,new vec\-- \,tor, which is a linear transformation. Therefore, it corresponds to a matrix. 
+Furthermore, to every vector $|f\rangle$, there exists the conjugate vector $\langle f|$, being specified as the so-called ket- and bra-vector, respectively. Thinking in components, the bra-vector $\langle f|$ can be regarded as the transposed and complex conjugate of the ket-vector $|f\rangle$. The inner product $\langle g\,|\,f\rangle$ in this vector space is defined by
+\be\label{eq1.1.6}
+\langle g|f\rangle - \int \dd^3{\bm r}g^*({\bm r})f({\bm r})=\langle f|g\rangle^*
+\ee
+The matrix element $\langle g|\hat A|f\rangle$ of the operator (the matrix) $\hat A$ is given by
+\be\label{eq1.1.7}
+\langle g|\hat A|f\rangle = \langle g|\hat Af\rangle = \int \dd^3{\bm r}g^*(r)\hat Af({\bm r})
+\ee
+In order to give a more concrete picture of the considerations made so far, we introduce now an orthonormal basis $|i\rangle, i=1,2,3\cdots,$ of the Hilbert space. (We wrote $i=1,2,3\cdots;$ however, the basis is not necessarily a countable set. In general, when the volume of the system is infinite, the set of basis vectors is uncountable. In these cases, the sum $\sum_i$ over the set labelled by $i$ must be replaced by an integral. ) Because the basis is orthonormal, the orthonormality condition
+\be
+\langle i|j\rangle=\delta_{i,j}
+\ee
+and the completeness condition
+\be
+\sum_i|i\rangle\langle i|=\hat 1
+\ee
+hold. Here, the so-called Kronecker delta $\delta_{i,j}$ is defined to equal $1$ when $i=j$, and to be zero otherwise. $\hat 1$ is the identity matrix; in other words, the identity operator. In this basis, the vector $|f\rangle$ can be represented by its components:
+
+\be
+|f\rangle = \sum_i|i\rangle\langle i|f\rangle,\quad \langle f|=\sum_i\langle f|i\rangle\langle i|.
+\ee
+Furthermore, the component representation of $\hat A|f\rangle$ is given by
+
+\be\begin{split}
+\hat A|f\rangle &= \left(\sum)i|i\rangle\langle i|\right)\hat A\left(\sum)j|j\rangle\langle j|\right)|f\rangle\\
+&=\sum_{i,j}|i\rangle\langle i|\hat A|j\rangle\langle j|f\rangle
+\end{split}\ee
+and \eqref{eq1.1.7} can be written as
+
+\be
+\langle g|\hat A|f\rangle = \sum_{i,j}\langle g|i\rangle\langle i|\hat A|j\rangle\langle j|f\rangle
+\ee
+We define the Hermitian conjugate $\hat{A}^\dagger$ of $\hat A$ by requiring that
+
+\be\label{eq1.1.13}
+\langle g|\hat A|f\rangle = \langle\hat{A}^\dagger g|f\rangle
+\ee
+holds for every $|f\rangle$ and $|g\rangle$. Comparing the inner product of the conjugate of 
+\be
+|\hat{A}^\dagger g\rangle = \sum_{j,i}|j\rangle\langle|\hat{A}^\dagger|i\rangle\langle i|g\rangle
+\ee
+with $|f\rangle$ and
+
+\be
+\langle\hat{A}^\dagger g|f\rangle = \sum_{j,i}\langle g|i\rangle\langle j|\hat{A}^\dagger|i\rangle^*\langle j|f\rangle
+\ee
+with \eqref{eq1.1.13}, we obtain
+\be
+\langle j|\hat{A}^\dagger|i\rangle = \langle i|\hat A|j\rangle^*
+\ee
+
+This is nothing but the usual definition of the Hermitian conjugation of a matrix. In the case that $\hat A$ and $\hat{A}^\dagger$ are equal $\hat A = \hat{A}^\dagger$, $\hat A$ is called a Hermitian operator. In quantum mechanics, all physical quantities are represented in terms of Hermitian operators. 
+
+We now introduce the eigenvalue $a$ and the eigenstate $|a\rangle$ of the Hermitian operator $\hat A$:
+\be
+\hat A|a\rangle = a|a\rangle
+\ee
+By taking the inner product with $|a\rangle$
+\be
+\langle a|\hat A|a\rangle = a\langle a|a\rangle
+\ee
+we can deduce that at the left-hand side due to hermiticity 
+
+\be\label{eq1.1.19}
+\langle a|\hat A|a\rangle = \langle \hat{A}^\dagger a|a\rangle = \langle\hat{A}a|a\rangle - a^*\langle a|a\rangle
+\ee
+holds, and obtain $a=a*$. Therefore, we conclude that the eigenvalue $a$ is real. Furthermore, for $a\neq a'$ with
+
+\be
+\langle a'|\hat A=a'\langle a'|
+\ee
+from \eqref{eq1.1.19} we can deduce that
+
+\be
+\langle a'|\hat A|a\rangle = a\langle a'|a\rangle = a'\langle a'|a\rangle
+\ee
+and conclude that $\langle a'\, |\, a\rangle = 0$. This signifies that the eigenstates of a Hermitian operator with different eigenvalues are orthogonal to each other. Therefore, by a suitable normalization it is possible to build an orthonormal basis using the eigenstates of an Hermitian operator by orthogonalizing in eigenspaces belonging to the same eigenvalue. 
+
+Naturally, the space coordinate $\hat{\bm r}$ is a Hermitian operator. Every component $\hat{r}_\alpha$ of $\hat{\bm r}$ acts on $f(\hat{\bm r})$
+
+\be\label{eq1.1.22}
+\hat{r}_\alpha f({\bm r})=r_\alpha f({\bm r})
+\ee
+creating a new function. Notice that on the right hand side, $r_\alpha$ is no longer an operator, but the $\alpha$-component of the function $\bm r$. The generalization of \eqref{eq1.1.22} is
+
+\be
+V(\hat{\bm r})f({\bm r})=V({\bm r})f({\bm r})
+\ee
+with $V(\hat{\bm r})$ being the potential energy of equation \eqref{eq1.1.1}. With \eqref{eq1.1.22} we write
+
+\be\begin{split}
+\langle g|\hat{r}_\alpha|f\rangle &=\int\dd^3{\bm r}g^*({\bm r})\hat{r}_\alpha f({\bm r})=\int \dd^3g^*({\bm r})r_\alpha f({\bm r})=\int\dd^3{\bm r}[r_\alpha g({\bm r})]^*f({\bm r})\\
+&=\int\dd^3{\bm r}[\hat{r}_\alpha g({\bm r})]^*f({\bm r})=\langle\hat{r}_\alpha g|f\rangle
+\end{split}\ee
+It should be clear from these equations that $\hat{r}_\alpha$ is Hermitian. 
+
+We introduce now the state $|\bm r\rangle$ being the eigenstate with eigenvalue $\bm r$ of the operator $\hat{\bm r}$:
+
+\be
+\hat{\bm r}|\bm r\rangle = \bm r|\bm r\rangle
+\ee
+Because $\langle \bm r'|\bm r\rangle = 0$ for $\bm r\neq\bm r'$, 
+\be\label{eq1.1.26}
+\langle \bm r'|\bm r\rangle = \delta(\bm r-\bm r')
+\ee
+with an appropriate choice of the normalization. Here we have introduced the so-called delta function $\delta(\bm r-\bm r')$, defined to be zero for $\bm r\neq\bm r'$, and infinite at $\bm r=\bm r'$, and to give the value $1$ when integrated over $\bm r-\bm r'$ in a region containing the origin. Furthermore, $|\bm r\rangle$ and $\langle\bm r|$ fulfill the completeness relation
+
+\be\label{eq1.1.27}
+\int\dd^3\bm r|\bm r\rangle\langle \bm r|=\hat 1
+\ee
+The reader not familiar with the delta function is referred to the Appendices A and B. As mentioned there, we can introduce a vector space on a discrete lattice. The components of a vector in this space are defined by the values of a function on the discrete lattice points. This vector space approaches the Hilbert space when the number of lattice points $N_L$ becomes infinite, that is, when the lattice spacing $\Delta x$ becomes zero. In this case, the sum $(\Delta x)^3\sum_{\text{lattice points }i}$ approaches the three-dimensional integral appearing in \eqref{eq1.1.6}. As a basis of the $N_L$-dimensional vector space, we define states that are zero at all lattice points except for the coordinate ${\bm r}_i$, where the value is defined to be $1/(\Delta)^{3/2}$. Then we have
+
+\[\langle {\bm r}_i|{\bm r}_j\rangle = \sum_k\frac{\delta_{{\bm r}_i,{\bm r}_k}}{(\Delta x)^{3/2}}\frac{\delta_{{\bm r}_k,{\bm r}_j}}{(\Delta x)^{3/2}}=\frac{\delta_{{\bm r}_i,{\bm r}_j}}{(\Delta x)^{3}}\]
+and, furthermore, 
+\[(\Delta)^3\sum_i|{\bm r}_i\rangle\langle {\bm r}_i|=\hat{1} \]
+In the limit as $\Delta x\to0$, these equations approach the equations of the inner product and the completeness relation of the basis ${\bm r}$ mentioned above. 
+
+Now, owing to the completeness relation of the basis ${\bm r}$, we can write the inner product \eqref{eq1.1.6} as
+
+\be
+\langle g|f\rangle = \int\dd^3{\bm r}\langle g|{\bm r}\rangle\langle{\bm r}|f\rangle
+\ee
+and obtain
+
+\be\begin{split}
+f({\bm r})&=\langle{\bm r}|f\rangle,\\
+g^*({\bm r})=\langle g|\bm r\rangle.
+\end{split}\ee
+From this point of view, the wave function $\psi({\bm r},t)$ is nothing but the $\bm r$-component of the state vector $|\psi(t)\rangle$ of the Hilbert space written in the basis $|\bm r\rangle$. 
+
+Now, what about the momentum operator $\hat{\bm p}$? Here, we meet the very first example of the most fundamental relation in quantum mechanics, namely the canonical conjugate relation. A plane wave with wave number $\bm k$ can be expressed as $\psi_{\bm k}({\bm r})=(2\pi\hbar)^{-3/2}e^{i\bm{kr}}$. Writing the place wave as a function of $\bm r$, and using
+\be\label{eq1.1.30}
+\hat{\bm p}=\frac{\hbar}{\ii}\frac{\partial}{\partial {\bm r}}
+\ee
+we obtain
+\be\label{eq1.1.31}
+\hat{\bm p}\psi_{\bm k}({\bm r})=\hbar\bm{k}\psi_{\bm k}(\bm r)=\bm p\psi_{\bm k}(\bm r)
+\ee
+and therefore the relation $\bm{p=\hbar k}$. We now define the following combination of $\hat{\bm r}$ and $\hat{\bm p}$:
+\be
+[\hat{r}_\alpha,\hat{p}_\beta]=\hat{r}_\alpha\hat{p}_\beta-\hat{p}_\beta\hat{r}_\alpha
+\ee
+This is the so-called commutator of $\hat{\bm r}_\alpha$ and $\hat{\bm p}_\alpha$, which is also an operator. Acting with this commutator on an arbitrary function $f({\bm r})$, we obtain
+\[\begin{split}
+[\hat{r}_\alpha,\hat{p}_\beta]f({\bm r})&=\left(\hat{r}_\alpha\frac{\hbar}{\ii}\frac{\partial}{\partial r_\beta}-\frac{\hbar}{\ii}\frac{\partial}{\partial r_\beta}\hat{r}_\alpha\right)f(\bm r)\\
+&=\frac{\hbar}{\ii}\left\{r_\alpha\frac{\partial f(\bm r)}{\partial r_\beta}-\frac{\partial}{\partial r_\beta}(r_\alpha f(\bm r))\right\}
+\end{split} \]
+and therefore the identity
+\be\label{eq1.1.33}
+[\hat{r}_\alpha,\hat{p}_\beta]=\ii\hbar\delta_{\alpha,\beta}
+\ee
+This is the so-called commutation relation. It follows from \eqref{eq1.1.33} for $\alpha=\beta$ that $[\hat{r}_\alpha,\hat{p}_\alpha]=\ii\hbar$. This means that $\hat{r}_\alpha$ and $\hat{p}_\alpha$ are canonical conjugates of each other. This commutation relation, as well as \eqref{eq1.1.30}, is the starting point for many very fundamental and wide conceptual developments that will be discussed in what follow. However, we first discuss some aspects of the eigenstates of $\hat{\bm p}$. We can interpret \eqref{eq1.1.31} as
+\be
+\hat{\bm p}|\bm p\rangle = \bm p|\bm p\rangle
+\ee
+\be
+\langle\bm r|\bm p\rangle = \psi_{\bm p/\hbar}(\bm r)\frac{1}{(2\pi\hbar)^{3/2}}\exp\left(\frac{\ii}{\hbar}\bm p\cdot\bm r\right)
+\ee
+$|\bm p\rangle$ also spans a basis; orthogonality can be shown with
+\be\label{eq1.1.36}\begin{split}
+\langle\bm p'|\bm p\rangle&=\int\dd^3\bm r\langle\bm p'|\bm r\rangle\langle\bm r|\bm p\rangle\\
+&=\int\frac{\dd^3\bm r}{(2\pi\hbar)^2}\exp\left[\frac{\ii}{\hbar}(-\bm p'+\bm p)\cdot\bm r\right]=\delta(\bm p-\bm p')
+\end{split}\ee
+and, in the same manner, the completeness relation
+\be\label{eq1.1.37}
+\int\dd^3\bm p|\bm p\rangle\langle\bm p|=\hat{1}
+\ee
+by acting on it with $\langle\bm r'|$ and $|\bm r\rangle$ on the left- and right-hand sides:
+\be\begin{split}
+\int\dd^3\bm p\langle\bm r'|\bm p\rangle\langle\bm p|\bm r\rangle&=\int\frac{\dd^3\bm p}{(2\pi\hbar)^3}\exp\left[\frac{\ii}{\hbar}\bm p\cdot(\bm r'-\bm r)\right]\\
+&=\delta(\bm r-\bm r')=\langle\bm r'|\bm r\rangle
+\end{split}\ee
+Equations \eqref{eq1.1.26}, \eqref{eq1.1.27}, \eqref{eq1.1.36} and \eqref{eq1.1.37} are the basic relations of the Fourier analysis, because
+\be
+f(\bm r)=\langle\bm r|f\rangle=\int\dd^3\bm p\langle\bm r|\bm p\rangle\langle\bm p|f\rangle=\int\frac{\dd^3\bm p}{(2\pi\hbar)^{3/2}}\text{e}^{\ii\bm p\cdot\bm r/\hbar}\langle\bm p|f\rangle
+\ee
+is the Fourier representation of $f(\bm r)$ in terms of $\langle\bm p|f\rangle = F(\bm p)$, and the inversion of this Fourier transformation can be written as
+\be
+F(\bm p)=\langle\bm p|f\rangle=\int\dd^3\bm r\langle\bm p|\bm r\rangle\langle\bm r|f\rangle=\int\frac{\dd^3\bm r}{(2\pi\hbar)^{3/2}}\text{e}^{-i\bm p\cdot\bm r/\hbar}f(\bm r)
+\ee
+We conclude that the Fourier transformation is the basis transformation that links the two basis sets (coordinates sets) $|\bm r\rangle$ and $|\bm p\rangle$ in the Hilbert space. (Ex- planations about the Fourier transformation can be found in Appendix A.)\\
+\indent We now return to the commutation relation and discuss its meaning in more detail. First, Heisenberg's uncertainty principle can be deduced from \eqref{eq1.1.33}. We consider now the expectation values $\hat{r}_\alpha=\langle\psi|\hat{r}_\alpha|\psi\rangle$ and $\hat{p}_\alpha=\langle\psi|\hat{p}_\alpha|\psi\rangle$ of $\hat{r}_\alpha$ and $\hat{p}_\alpha$ in the state $|\psi\rangle$. As mentioned earlier, the interpretation of quantum mechanics is only possible in terms of probabilities, and the observed values of $\hat{p}_\alpha$ and $\hat{r}_\alpha$ should follow a probability distribution around each expectation value. The width of this distribution can in some way be understood as the uncertainty, and in order to make it precise, we define the so-called variation in the following manner:
+\be\begin{split}
+&\langle(\Delta\hat{r}_\alpha)^2\rangle = \langle(\hat{r}_\alpha-\langle\hat{r}_\alpha\rangle)^2\rangle=\langle\hat{r}_\alpha^2\rangle-\langle\hat{r}_\alpha\rangle^2\\
+&\langle(\Delta\hat{p}_\alpha)^2\rangle = \langle(\hat{p}_\alpha-\langle\hat{p}_\alpha\rangle)^2\rangle=\langle\hat{p}_\alpha^2\rangle-\langle\hat{p}_\alpha\rangle^2
+\end{split}\ee
+We now introduce the Schwarz inequality. With $\lambda$ being an arbitrary complex parameter
+
+\be\begin{split}
+\langle|\Delta\hat{r}_\alpha+\lambda\Delta\hat{p}_\alpha|^2\rangle =&\langle(\Delta\hat{r}_\alpha)^2\rangle + \lambda^*\langle\Delta\hat{r}_\alpha\Delta\hat{p}_\alpha\rangle+\lambda\langle\Delta\hat{p}_\alpha\Delta\hat{r}_\alpha\rangle\\
+&+|\lambda|^2\langle(\Delta\hat{p}_\alpha)^2\rangle,
+\end{split}\ee
+we can deduce the Schwarz inequality from the fact that this expression must be positive, therefore
+
+\be\label{eq1.1.43}
+\langle(\Delta\hat{r}_\alpha)^2\rangle\langle(\Delta\hat{p}_\alpha)^2\rangle\ge|\langle(\Delta\hat{r}_\alpha\Delta\hat{p}_\alpha)\rangle|^2
+\ee
+We make the following decomposition: 
+
+\be
+\Delta\hat{r}_\alpha\Delta\hat{p}_\alpha=\frac{1}{2}\{\Delta\hat{r}_\alpha,\Delta\hat{p}_\alpha\}+\frac{1}{2}[\Delta\hat{r}_\alpha,\Delta\hat{p}_\alpha]
+\ee
+where $\{\hat{A},\hat{B}\}=\hat{A}\hat{B}+\hat{B}\hat{A}$ is the so-called anti-commutator. Recalling that both $\Delta\hat{r}_\alpha$ and $\Delta\hat{p}_\alpha$ are Hermitian, it follows that the Hermitian conjugate of the first term on the right-hand side of the above equation is
+\be
+\{\Delta\hat{r}_\alpha,\Delta\hat{p}_\alpha\}^\dagger=\{\Delta\hat{r}_\alpha,\Delta\hat{p}_\alpha\}.
+\ee
+Therefore, its expectation value is real. On the other hand, the second term equals
+\be
+\frac{1}{2}[\Delta\hat{r}_\alpha,\Delta\hat{p}_\alpha]=\frac{1}{2}[\hat{r}_\alpha,\hat{p}_\alpha]=\frac{\ii\hbar}{2}
+\ee
+and is therefore complex. Finally, we obtain
+\be
+|\langle\Delta\hat{r}_\alpha\Delta\hat{p}_\alpha\rangle|^2=\frac{1}{4}\langle\{\Delta\hat{r}_\alpha,\Delta\hat{p}_\alpha\}\rangle^2+\frac{\hbar^2}{4}\ge\frac{\hbar^2}{4}
+\ee
+and, in combination with \eqref{eq1.1.43}, 
+\be
+\langle(\Delta\hat{r}_alpha)^2\rangle\langle(\Delta\hat{p}_alpha)^2\rangle\ge\frac{\hbar^2}{4}
+\ee
+This is Heisenberg's uncertainty principle. Normally, we forget about the numerical factor and just write
+\be\label{eq1.1.49}
+\Delta\hat{r}_\alpha\Delta\hat{p}_\alpha\gtrsim\hbar.
+\ee
+No state exists that is an eigenstate of both $\hat{r}_\alpha$ and $\hat{p}_\alpha$, which means that it is impossible to determine $\hat{r}_\alpha$ and $\hat{p}_\alpha$ simultaneously, and the product of the uncertainty must be larger than a number of the order of the Planck constant. 
+
+We can deduce the following physical picture from the uncertainty principle. As can be seen in \eqref{eq1.1.1}, the Hamiltonian is the sum of the kinetic energy $\hat{\bm p}^2/2m$ and the potential energy $V(\hat{\bm r})$. In classical mechanics, because it is possible to determine $\bm p$ and $\bm r$ simultaneously, the ground state is given by $\bm p=0$ and $\bm r=\bm r_0$ (being the minimum of $V(\bm r)$). In quantum mechanics, it follows from \eqref{eq1.1.49} that if we require $\bm p=0$, then $\bm r$ is totally undetermined, and the gain of the potential energy is lost; on the other hand, if we require $\bm r=\bm r_0$, then $\bm p$ is totally undetermined, and the kinetic term becomes large. 
+
+Therefore, owing to the uncertainty principle, $\hat{r}_\alpha$ and $\hat{p}_\alpha$ have a strained relationship with each other. Let us make this more concrete. We start by considering the one-dimensional harmonic oscillator with Hamiltonian
+\be\label{eq1.1.50}
+\hat{H}=\frac{\hat{p}^2}{2m}+\frac{1}{2}m\omega^2\hat{x}^2
+\ee
+Writing $\Delta x$ for the width of the ground state $|0\rangle$ in coordinate space, and $\Delta p$ in momentum space, we can estimate the expectation value of the Hamiltonian or, in other words, the energy, by
+\be
+E=\langle0|\hat{H}|0\rangle\sim\frac{(\Delta p)^2}{2m}+\frac{1}{2}m\omega^2(\Delta x)^2.
+\ee
+We now insert the equation $\Delta p\propto\hbar/\Delta x$, obtained from the uncertainty relation:
+\be\label{eq1.1.52}
+E\sim\frac{\hbar^2}{2m(\Delta x)^2}+\frac{1}{2}m\omega^2(\Delta x)^2.
+\ee
+This is only a function of $\Delta x$. Calculating the minimum by $\partial E/\partial(\Delta x)=0$, we obtain
+\be
+\Delta x_0\sim\left(\frac{\hbar}{m\omega}\right)^{1/2}
+\ee
+This is the scale that lies behind the Hamiltonian \eqref{eq1.1.50}, which can be seen as the compromise point between two competing tendencies, namely the kinetic energy requiring $\Delta p=0$, and the potential energy requiring $\Delta x=0$. 
+
+Inserting $\Delta x_0$ in \eqref{eq1.1.52}, it is easy to calculate the zero point energy:
+\[E_0\sim\hbar\omega\]
+In mush the same manner this calculation can also be performed for the hydrogen atom with the Hamiltonian
+\be
+\hat{H}=\frac{\hat{\bm p}^2}{2m}-\frac{e^2}{|\hat{\bm r}|}.
+\ee
+Inserting $|{\bm p}|\propto\hbar/r$ and $|\bm r|\propto r$, we obtain
+\be
+E\sim\frac{\hbar^2}{2mr^2}-\frac{e^2}{r}
+\ee
+Again, by calculating the minimum $\partial E/\partial r=0$ we obtain
+\be
+r\sim r_0=\frac{\hbar^2}{me^2}
+\ee
+and
+\be
+E_0\sim-R_H=-\frac{me^4}{2\hbar^2}.
+\ee
+Here, $r_0$ is the so-called Bohr radius, and $R_H$ is the Rydberg energy. We could argue that the electron of the hydrogen atom does not fall into the nucleus and that the atom does not collapse owing to the uncertainty principle. 
+
+Another important aspect that is related to the canonical conjugation relation are symmetry operations. We start with the Taylor expansion:
+\be\begin{split}
+f(\bm r+\bm a)=&f(\bm r)+\left(\bm a\cdot\frac{\partial}{\partial\bm r}\right)f(\bm r)+\frac{1}{2}\left(\bm a\cdot\frac{\partial}{\partial\bm r}\right)^2f(\bm r)\\
+&+\frac{1}{3!}\left(\bm a\cdot\frac{\partial}{\partial\bm r}\right)^3f(\bm r)+\cdots
+\end{split}\ee
+Using the definition \eqref{eq1.1.2} of the exponential of an operator, we can write this as
+\be\label{eq1.1.59}
+f(\bm r+\bm a)=e^{\bm a\cdot\frac{\partial}{\partial\bm r}}f(\bm r)\equiv\hat{U}(\bm a)f(\bm r)
+\ee
+where $\hat{U}(\bm a)$ acts like a translation operator about $\bm a$ and, using \eqref{eq1.1.30}, can be written as
+\be
+\hat{U}(\bm a)=e^{\frac{\ii}{\hbar}\bm a\cdot\hat{\bm p}}
+\ee
+It follows that $[\hat{U}(\bm a)]^\dagger=\hat{U}(-\bm a)=[\hat{U}(\bm a)]^{-1}$, and therefore $\hat{U}(\bm a)$ is a unitary operator. An operator written in the exponential, as in the case here for $\hat{\bm p}$, which induces a symmetry operation, is called a generator. 
+
+In \eqref{eq1.1.59} we consider a linear operation on the function $f(\bm r)$. Next we consider a linear transformation on the operator $V(\hat{\bm r})$. We start by writing down the conclusion:
+\be\label{eq1.1.61}
+V(\hat{\bm r}+\bm a)=\hat{U}(\bm a)V(\hat{\bm r})[\hat{U}(\bm a)]^\dagger=\hat{U}(\bm a)V(\hat{\bm r})\hat{U}(-\bm a)
+\ee
+The meaning of this equation becomes evident by acting on a function $f(\bm r)$
+\be\begin{split}
+[\hat{U}(\bm a&)V(\hat{\bm r})\hat{U}(-\bm a)]f(\bm r)=[\hat{U}(\bm a)V(\hat{\bm r})]f(\bm r-\bm a)\\
+&=\hat{U}(\bm a)[V(\bm r)f(\bm {r-a})]=V(\bm{r+a})f(\bm r)=V(\hat{\bm r}+\bm a)f(\bm r)
+\end{split}\ee
+Since $f(\bm r)$ is arbitrary, we obtain \eqref{eq1.1.61}. Furthermore, because the operator $\hat{U}(\bm a)$ depends only on $\hat{\bm p}$, 
+\be
+\hat{U}(\bm a)\hat{\bm p}\hat{U}(-\bm a)=\hat{\bm p}
+\ee
+can be proved easily. Therefore, the kinetic energy is invariant:
+\be
+\hat{U}(\bm a)\frac{\hat{\bm p}^2}{2m}[\hat{U}(\bm a)]^\dagger=\frac{\hat{\bm p}^2}{2m}
+\ee
+Let us suppose that the system is invariant under translation. In our case, this means that the potential is independent of the position, $V(\hat{\bm r}+\bm\alpha)=V(\hat{\bm r})$. Then, we can write
+\be
+\hat{U}(\bm a)\hat{H}[\hat{U}(\bm a)]^{-1}=\hat{H}
+\ee
+Since $\bm a$ is an arbitrary real vector, we can choose it infinitesimally small and write the power series
+\be\label{eq1.1.65}
+\hat{U}(\pm\bm a)\simeq\hat{1}\pm\frac{\ii}{\hbar}\bm a\cdot\hat{\bm p}.
+\ee
+Then we obtain from \eqref{eq1.1.65}
+\be
+[\bm a\cdot\hat{\bm p},\hat{H}]=0.
+\ee
+Because $\bm a$ is an arbitrary infinitesimal vector, we can conclude
+\be\label{eq1.1.68}
+[\hat{p}_\alpha,\hat{H}]=0.
+\ee
+Conversely, it is possible to deduce \eqref{eq1.1.65} from \eqref{eq1.1.68}. In order to do so, let $\lambda$ be an arbitrary real parameter, then we define
+\be
+\hat{H}(\lambda)=\hat{U}(\lambda\bm a)\hat{H}\hat{U}(-\lambda\bm a)
+\ee
+Differentiating with respect to $\lambda$, with
+\be
+\frac{\partial\hat{U}(\pm\lambda\bm a)}{\partial\lambda}=\pm\frac{\ii}{\hbar}\bm a\cdot\hat{\bm p}\hat{U}(\pm\lambda\bm a)=\frac{\ii}{\hbar}\hat{U}(\pm\lambda\bm a)\bm a\cdot\hat{\bm p}
+\ee
+we obtain
+\be
+\frac{\partial\hat{H}(\lambda)}{\partial\lambda}=\frac{\ii}{\hbar}\hat{U}(\lambda\bm a)[\bm a\cdot\hat{\bm p},\hat{H}]\hat{U}(-\lambda\bm a).
+\ee
+Owing to \eqref{eq1.1.68}, the right-hand side is zero, therefore $\hat H(\lambda)$ does not depend on $\lambda$, and we regain \eqref{eq1.1.65} from $\hat{H}(1)=\hat{H}(0)$. \\
+\indent In this way, the symmetry of a system can be interpreted as the fact that the generator of the symmetry operation commutes with the Hamiltonian. And indeed, the commutator with the Hamiltonian has the important meaning of the time development of the physical quantity. To be complete, we will now review the Heisenberg picture. Equation \eqref{eq1.1.3} describes the time evolution of the wave function $\psi$. This is the so-called Schrödinger picture. On the other hand, the formal description where the wave function is time-independent, and the operators change in time, is called the Heisenberg picture. Explicitly, using \eqref{eq1.1.3}, from
+\be\begin{split}
+\langle\psi(t)|\hat{A}|\psi(t)\rangle&=\langle\psi(0)|\exp\left(\frac{\ii}{\hbar}\hat{H}t\right)\hat{A}\exp\left(-\frac{\ii}{\hbar}\hat{H}t\right)|\psi(0)\rangle\\
+&=\langle\psi(0)|\hat{A}_H(t)|\psi(0)\rangle
+\end{split}\ee
+we obtain the following definition:
+\be
+\hat{A}_H(t)=\exp\left(\frac{ii}{\hbar}\hat{H}t\right)\frac{\ii}{\hbar}\hat{A}\exp\left(-\frac{\ii}{\hbar}\hat{H}t\right)
+\ee
+We obtain the Heisenberg equation of motion as 
+\be\begin{split}
+\frac{\dd\hat{A}_H(t)}{\dd t}&=\exp\left(\frac{ii}{\hbar}\hat{H}t\right)\frac{\ii}{\hbar}[\hat{H},\hat{A}]\exp\left(-\frac{\ii}{\hbar}\hat{H}t\right)\\
+&=\frac{\ii}{\hbar}[\hat{H},\hat{A}_H(t)]
+\end{split}\ee
+Of course, the time evolution of the Hamiltonian itself is given by
+\be
+\hat{H}_H(t)=\hat{H}
+\ee
+and is therefore time independent. This is nothing but the energy conservation law in quantum mechanics. 
+
+Returning to the discussion of symmetry, we obtain from \eqref{eq1.1.68}
+\be
+\frac{\dd\hat{p}_\alpha(t)}{\dd t}=\frac{\ii}{\hbar}[\hat{H},\hat{p}_\alpha(t)]=0
+\ee
+We see that $\hat{p}_\alpha$ does not change in time and therefore is a conserved quantity. The symmetry operation in the $\hat{\bm r}$ coordinate is written in terms of the canonical conjugate $\hat{\bm p}$ as a symmetry generator, and this symmetry leads to a conservation law for $\hat{\bm p}$. When we proceed to quantum field theory, this will be seen to be related to the Noether theorem. 
+

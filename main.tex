@@ -75,7 +75,31 @@ In this section, we consider the many-particle case. In this case the wave funct
 \langle\bm r_1,\cdots,\bm r_N|\psi(t)\rangle=\psi(\bm r_1,\cdots,\bm r_N,t)
 \ee
 Unlike classical mechanics, in many-particle quantum mechanics it is impossible in principle to distinguish particles of the same species. We cannot think about indistinguishable particles as rigid bodies; however, it should be possible to get an idea of it with the following metaphor. \\
-\indent Think about a luminous advertisement screen. By switching the lamps on and off at every point of the surface, it is possible to create a moving picture. Places that are illuminated have more energy than the other places, and therefore there should be a particle. 
+\indent Think about a luminous advertisement screen. By switching the lamps on and off at every point of the surface, it is possible to create a moving picture. Places that are illuminated have more energy than the other places, and therefore there should be a particle. A state with $N$ particles at $\bm r_1\cdots\bm r_N$ should correspond to the state where $N$ lights are illuminated. In this metaphor, it is clear that it is not possible to distinguish the particles. The particle appears as an illuminated lamp, and it is not possible to trace back the way of it as rigid body. 
+
+In mathematical language, this means that exchanging the order of $\bm r_1\cdots\bm r_N$ does not lead to a new state, but should lead to the very same state again. Explicitly, taking care also of the statistics when exchanging $\bm r_i$ with $\bm r_j$, we obtain
+\be\begin{split}
+\psi(\bm r_1,&\cdots,\bm r_j,\cdots,\bm r_i,\cdots,\bm r_N)\\
+=&\begin{cases}
++\psi(\bm r_1,&\cdots,\bm r_i,\cdots,\bm r_j,\cdots,\bm r_N)\quad  (\text{boson})\\
+-\psi(\bm r_1,&\cdots,\bm r_i,\cdots,\bm r_j,\cdots,\bm r_N)\quad  (\text{fermion})
+\end{cases}. 
+\end{split}\ee
+However, as the reader might have realized, we now have a little problem with the interpretation of the wave function. Of course, 
+\be
+P(\bm r_1,\cdots,\bm r_N;t)=|\psi(\bm r_1,\cdots,\bm r_N;t)|^2
+\ee
+is the probability of finding at time $t$ the $N$ particles at $\bm r_1\cdot\bm r_N$. However, the image that we have in mind in the single-particle case, namely that $\psi(\bm r,t)$ is the complex wave amplitude at the position $\bm r$ in the three0dimensional physical space, is ruined because we now have to think mathematically about a $3N$-dimensional space. The answer to the question whether in the many-particle case it is still possible to think about a wave function in the physical three-dimensional space is given by the so-called method of second quantization. 
+
+For a detailed discussion of the second quantization the reader is referred to \cite{3}. Here, we proceed in a heuristic way. Let us return to the single-particle case. We decompose the single-particle wave function $\psi(\bm r,t)$ is an orthonormal basis $\phi_n(\bm r)$
+\be
+\psi(\bm r,t)=\sum_na_n(t)\phi_n(\bm r)
+\ee
+The whole time dependence is given by the expansion coefficients $a_n(t)$. Inserting \eqref{eq1.2.4} into the Schrödinger equation, we obtain
+\be
+\ii\hbar\sum_n\frac{\dd a_n(t)}{\dd t}\phi_n(\bm r)=\sum_na_n(t)\hat{H}\phi_n(\bm r)
+\ee
+
 
 \section{The Variation Principle and the Noether Theorem}
 \section{Quantization of the Electromagnetic Field}
@@ -107,5 +131,11 @@ Unlike classical mechanics, in many-particle quantum mechanics it is impossible 
 \section{Fourier Transformation}
 \section{Functionals and the Variation Principle}
 \section{Quantum Statistical Mechanics}
+
+
+\renewcommand{\bibname}{References}
+\bibliographystyle{plain}
+\bibliography{ref}
+
 
 \end{document}  

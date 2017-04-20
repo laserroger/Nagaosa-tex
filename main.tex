@@ -7,7 +7,7 @@
 \usepackage{amssymb, amsmath}
 \usepackage[hyperindex,breaklinks,colorlinks,linkcolor=magenta,anchorcolor=blue,citecolor=blue]{hyperref} 
 \usepackage{fancyhdr}
- 
+
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[CE]{\footnotesize{\nouppercase\leftmark}}
@@ -41,6 +41,10 @@
 \def\ee{\end{equation}}
 \def\ii{\text{i}}
 \def\dd{\text{d}}
+\def\dt{\text{d}t}
+
+\makeatletter % `@' now normal 'letter'
+\@addtoreset{equation}{subsection}
 
 \renewcommand\theequation{{\thesection}%
 .{\arabic{equation}}}
@@ -92,13 +96,110 @@ P(\bm r_1,\cdots,\bm r_N;t)=|\psi(\bm r_1,\cdots,\bm r_N;t)|^2
 is the probability of finding at time $t$ the $N$ particles at $\bm r_1\cdot\bm r_N$. However, the image that we have in mind in the single-particle case, namely that $\psi(\bm r,t)$ is the complex wave amplitude at the position $\bm r$ in the three0dimensional physical space, is ruined because we now have to think mathematically about a $3N$-dimensional space. The answer to the question whether in the many-particle case it is still possible to think about a wave function in the physical three-dimensional space is given by the so-called method of second quantization. 
 
 For a detailed discussion of the second quantization the reader is referred to \cite{3}. Here, we proceed in a heuristic way. Let us return to the single-particle case. We decompose the single-particle wave function $\psi(\bm r,t)$ is an orthonormal basis $\phi_n(\bm r)$
-\be
+\be\label{eq1.2.4}
 \psi(\bm r,t)=\sum_na_n(t)\phi_n(\bm r)
 \ee
 The whole time dependence is given by the expansion coefficients $a_n(t)$. Inserting \eqref{eq1.2.4} into the Schrödinger equation, we obtain
 \be
 \ii\hbar\sum_n\frac{\dd a_n(t)}{\dd t}\phi_n(\bm r)=\sum_na_n(t)\hat{H}\phi_n(\bm r)
 \ee
+Multiplying by $\phi_n^*(r)$ and integrating over $\bm r$, we obtain
+\be\label{eq1.2.6}
+\ii\hbar\frac{\dd a_n(t)}{\dd t}=\sum_m\langle\phi)n|\hat{H}|\phi_m\rangle a_m(t).
+\ee
+The complex conjugate of this equation is given by
+\be\label{eq1.2.7}
+\ii\hbar\frac{\dd a_n^*(t)}{\dd t}=-\sum_m a_m^*(t)\langle\phi_m|\hat{H}|\phi_n\rangle, 
+\ee
+where $\hat{H}^\dagger=\hat{H}$ has been used. 
+
+These equations determine the time development of the expansion coefficients $a_n(t)$. We will now modify them a little. In order to do so, we must think about the energy expectation value $\hat H$ in the state $|\psi(t)\rangle$:
+\be
+\langle\hat{H}\rangle=\langle\psi(t)|\hat{H}|\psi(t)\rangle=\sum_{n,m}a_n^*(t)a_m(t)\langle\phi_n|\hat{H}|\phi_m\rangle
+\ee
+Using this expression we can write for \eqref{eq1.2.6} and \eqref{eq1.2.7}, respectively
+\be\label{eq1.2.9}
+\frac{\dd a_n(t)}{\dt}=\frac{\partial\langle\hat{H}\rangle}{\partial(\ii\hbar a_n^*)}
+\ee
+and
+\be\label{eq1.2.10}
+\frac{\dd(\ii\hbar a_n^*(t))}{\dt}=-\frac{\partial\langle\hat H\rangle}{\partial a_n}.
+\ee
+Here, we see that these equations are formally analogous to Hamilton's canonical equation with the correspondences $a_n\leftrightarrow x$ and $\ii\hbar a_n^*\leftrightarrow p$. However, of course the espansion coefficients $a_n$ and $a_n^*$ are not dynamical variables of the system. 
+
+The idea of second quantization is to promote $a_n$ and $a_n^*$ to operators and to interpret $N_n=N|a_n|^2=Na_na_n^*$ as physical quantities of the system. Originally, in single-particle quantum mechanics, $N_n$ is $N$ times the probability of detecting the particle when the same experiment is performed $N$ times. Then, $N$ is the number of experiments, and therefore in principle this experiment can be performed in single particle quantum mechanics. 
+
+On the other hand, consider a system with $N$ non-interacting particles where only one experiment is performed, and where the number of particles in the single particle state $n$ is observed to be $\hat{N}_n$. Since both experiments described above are different, $N_n$ and $\hat{N}_n$ are different quantities - repeating number, or observed number of particles. Experience tells us that these two numbers often agree. Admitting this, the number $N_n$ appearing in the single particle system after performing $N$ experiments will be promoted to the observable (physical quantity) $\hat N=\hat{A}_n^\dagger\hat{A}_n$ in the $N$-particle system. At the same time, 
+\be\begin{split}
+\sqrt{N}a_n&\to\hat{A}_n,\\
+\sqrt{N}a_n^*&\to\hat{A}_n^\dagger
+\end{split}\ee
+are promoted to operators. Taking into account also that the energy expectation value $\hat{H}$ is multiplied by $N$, it is clear from \eqref{eq1.2.9} and \eqref{eq1.2.10} that $\hat{A}_n$ and $\ii\hbar\hat{A}_n^*$ are canonical conjugate variables. Therefore, we suppose that they fulfill the same commutation relation as $\hat{\bm r}$ and $\hat{\bm p}$:
+\be\label{eq1.2.12}
+[\hat{A}_n,\ii\hbar\hat{A}_n^\dagger]=\ii\hbar
+\ee
+Further generalizing \eqref{eq1.2.12}, we obtain
+\be\label{eq1.2.13}\begin{split}
+[\hat{A}_n,\ii\hbar\hat{A}_m^\dagger]=\ii\hbar\delta_{n,m},\\
+[[\hat{A}_n,\hat{A}_m]=[\ii\hbar\hat{A}_n^\dagger,\ii\hbar\hat{A}_m^\dagger]=0.
+\end{split}\ee
+From these commutation relations it can be understood that $\hat{A}_j^\dagger$, and $A_n$ are creating and annihilating one particle in the state $n$, respectively. We write $|N_n\rangle$ for the many-particle state where $N_n$ particles are in the single-particle state $n$. Then, the following equation holds:
+\be
+\hat{N}_n|N_n\rangle=N_n|N_n\rangle
+\ee
+Acting with $\hat{N}_n$ on the state $A_n^\dagger|N_n\rangle$, we obtain
+\be\label{eq1.2.15}\begin{split}
+\hat{N}_n\hat{A}_n^\dagger|N_n\rangle&=([\hat{N}_n,\hat{A}_n^\dagger]+\hat{A}_n^\dagger\hat{N}_n)|N_n\rangle\\
+&=(N_n+1)\hat{A}_n^\dagger|N_n\rangle
+\end{split}\ee
+Here, we used a variation of equation \eqref{eq1.2.13}\be\tag{1.2.13'}
+[\hat{N}_n,\hat{A}_n^\dagger]=[\hat{A}_n^\dagger\hat{A}_n,\hat{A}_n^\dagger]=\hat{A}_n^\dagger[\hat{A}_n,\hat{A}_n^\dagger]=\hat{A}_n^\dagger
+\eeFrom \eqref{eq1.2.15} it follows that the particle number eigenvalue of the state AjJlVn) is given by $N_n + 1$, and therefore $\hat{A}_n^\dagger$, is an operator that increases the particle number by one. In the same way, it can be seen that An is an operator that decreases the particle number by one. Starting from the state $|N_n = 0\rangle$, we can create the states $N_n = 0,1,2,\cdots$ by acting on it successively with $\hat{A}^\dagger_n$. The particle picture arises because the particle number eigenvalue $N_n$ counts discrete integer numbers.
+
+On the other hand, what might the wave picture be? In order to understand it, we define the field operators $\hat{\psi}(\bm r)$ and $\hat{\psi}^\dagger(\bm r)$
+\be\label{eq1.2.16}\begin{split}
+\hat{\psi}(\bm{r})=\sum_n\hat{A}_n\phi_n(\bm{r}),\\
+\hat{\psi}^\dagger(\bm{r})=\sum_n\hat{A}^\dagger_n\phi_n(\bm{r}),
+\end{split}\ee
+Using the commutator relation \eqref{eq1.2.13} and the fact that $\{\phi_n(\bm r)\}$ is an orthonormal basis of single-particle states, we obtain
+\be\begin{split}
+[\hat{\psi}(\bm{r}),\hat{\psi}^\dagger(\bm{r}')]&=\sum_{n,m}[\hat{A}_n,\hat{A}_m^\dagger]\phi_n(\bm{r})\phi_m^*(\bm{r}')\\
+&=\sum_n\langle\bm{r}|n\rangle\langle n|\bm{r}'\rangle=\langle \bm{r}|\bm{r}'\rangle=\delta(\bm{r}-\bm{r}')
+\end{split}\ee
+and
+\be
+[\hat{\psi}(\bm{r}),\hat{\psi}(\bm{r}')]=[\hat{\psi}^\dagger(\bm{r}),\hat{\psi}^\dagger(\bm{r}')]=0
+\ee
+$n(r) = \hat{\psi}^\dagger(\bm r)\hat\psi(\bm r)$ is the particle density at the position $\bm r, \hat\psi^\dagger(\bm r)$ is the creation operator of a particle at position $\bm r$, and $\hat\psi(\bm r)$ is the annihilation operator of a particle at position $\bm r$. By promoting the wave functions $\psi(\bm r)$ and $\psi^*(\bm r)$ to operators $\hat\psi(\bm r)$ and $\hat\psi^*(\bm r)$, we regain the picture of wave functions in the three-dimensional physical space, and also the metaphor of the luminous advertisement screen works well. More precisely, the position coordinate $\hat{\bm r}$ is degraded from an operator to a label $\bm r$ defining the position of the light, and instead operators switching the light on $(\hat\psi^\dagger(\bm r))$ and off $(\hat\psi(\bm r))$ emerge. A particle is described as the excitation of a field that is created and annihilated.
+We now introduce the phase operator $\hat\theta_n$ describing the interference of a wave by
+\be\begin{split}
+\hat A_n^\dagger&=(\hat N_n)^{1/2}e^{-\frac{\ii}{\hbar}\hat\theta_n},\\
+\hat A_n&=e^{\frac{\ii}{\hbar}\hat\theta_n}(\hat N_n)^{1/2}.
+\end{split}\ee
+We show that by assuming the canonical conjugation relations of $\hat N$ and $\hat\theta_n$
+\be\label{eq1.2.20}
+[\hat{N}_n,\hat{\theta}_n]=\ii\hbar
+\ee
+the commutation relation \eqref{eq1.2.12} is obtained. In order to do so, we define 
+\be
+\hat N_n(\lambda)=\exp\left(\frac{\ii}{\hbar}\lambda\hat\theta_n\right)\hat N_n\exp\left(-\frac{\ii}{\hbar}\lambda\hat\theta_n\right)
+\ee
+Then, the following equation holds:\be\label{eq1.2.22}
+[\hat{A}_n,\hat{A}_n^\dagger]=\hat N_n(1)-\hat N_n(0)=\int_0^1\frac{\dd\hat N_n(\lambda)}{\dd\lambda}\dd\lambda. 
+\ee
+On the other hand, owing to \eqref{eq1.2.20}, we obtain
+\be
+\frac{\dd\hat N_n(\lambda)}{\dd\lambda}\dd\lambda=\frac{\ii}{\hbar}\exp\left(\frac{\ii}{\hbar}\lambda\hat\theta_n\right)[\hat\theta_n,\hat N_n]\exp\left(-\frac{\ii}{\hbar}\lambda\hat\theta_n\right)=1
+\ee
+and therefore \eqref{eq1.2.12}.
+Now, having introduced the particle number operator $\hat N_n$ and its canonical conjugate, the phase $\hat\theta_n$, it is necessary to stress the following. Obviously, $\hat N_n$ is a Hermitian operator; however, exactly speaking, $\hat\theta_n$ is not Hermitian. In order to see this, we notice that owing to \eqref{eq1.2.22}
+\be
+\exp\left(\frac{\ii}{\hbar}\lambda\hat\theta_n\right)\hat N_n\exp\left(-\frac{\ii}{\hbar}\lambda\hat\theta_n\right)=\hat N_n+1
+\eeholds, and for a general integer number $m$
+\be\begin{split}
+\exp\left(\frac{\ii}{\hbar}\lambda\hat\theta_n\right)(\hat N_n)^m\exp\left(-\frac{\ii}{\hbar}\lambda\hat\theta_n\right)&=\left[\exp\left(\frac{\ii}{\hbar}\lambda\hat\theta_n\right)\hat N_n^m\exp\left(-\frac{\ii}{\hbar}\right)\right]^m\\
+&=(\hat N_n+1)^m
+\end{split}\eeholds. For a general function $g(N)$ we obtain
 
 
 \section{The Variation Principle and the Noether Theorem}

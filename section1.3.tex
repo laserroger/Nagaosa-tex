@@ -9,3 +9,34 @@ We return to a single-particle system. The Heisenberg equation of motion, descri
 \ee\be
 \ii\hbar\frac{\dd}{\dd t}\hat{\bm p}(t)=-[\hat{\bm r}(t),\hat H]=\left.\ii\hbar\frac{\partial H(\bm r,\bm p)}{\partial\bm r}\right|_{\substack{\bm r=\hat{\bm r}(t)\\ \bm p=\hat{\bm p}(t)}}.
 \ee
+Here, $H(\bm r,\bm p)$ is a function of $\bm r$ and $\bm p$, from which the Hamiltonian $\hat H$ is obtained by substituting $\bm r \to\hat{\bm r}(t)$ and $\bm p \to\hat{\bm p}(t)$. The above equation has the same structure as the classical canonical equations of the Hamiltonian:
+\be\label{eq1.3.1'}\tag{1.3.1'}
+\frac{\dd}{\dd t}\bm r(t)=\frac{\partial H(\bm r(t),\bm p(t))}{\partial\bm p(t)}
+\ee
+\be\label{eq1.3.2'}\tag{1.3.2'}
+\frac{\dd}{\dd t}\bm p(t)=-\frac{\partial H(\bm r(t),\bm p(t))}{\partial\bm r(t)}
+\ee
+Here, we return for a moment to classical mechanics and use the variation principle of analytical mechanics:
+\be\label{eq1.3.3}
+L(\bm r,\dot{\bm r};\bm p)=\bm p\cdot\dot{\bm r}-H(\bm r,\bm p)
+\ee
+We define the action $S$ as
+\be
+S=\int\dd tL(\bm r(t),\dot{\bm r}(t);\bm p(t))
+\ee
+The variation of $S$ in $\bm r$ and $\bm p$ is given by
+\be\begin{split}
+\delta S&=\int\dd t\left\{\delta\bm r(t)\cdot\frac{\partial L}{\partial\bm r(t)}+\delta\dot{\bm r}(t)\cdot\frac{\partial L}{\partial\dot{\bm r}(t)}+\delta\bm p(t)\cdot\frac{\partial L}{\partial\bm p(t)}\right\}\\
+	    &=\int\dd t\left\{\delta\bm r(t)\cdot\left[\frac{\partial L}{\partial\bm r(t)}-\frac{\dd}{\dd t}\frac{\partial L}{\partial\dot{\bm r}(t)}\right]+\delta\bm p(t)\cdot\frac{\partial L}{\partial\bm p(t)}\right\}.
+\end{split}\ee
+(The reader unfamiliar with the variation principle or functional derivative is referred to Appendix \ref{secapb}.) By requiring that the variation 6S must be zero for arbitrary transformations 6r(t) and Sp(t), we obtain directly \eqref{eq1.3.1'} and \eqref{eq1.3.2'}.
+So, what might be the variation principle corresponding to the field equation \eqref{eq1.2.31}? We know already the analogy $\hat{\bm r}\leftrightarrow \hat\psi(\bm r)$ and $\hat{\bm p} \leftrightarrow \hat\psi^\dagger(\bm r)$. From \eqref{eq1.3.3} we can deduce that the Lagrangian must be
+
+
+
+
+
+
+
+
+

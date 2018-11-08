@@ -315,28 +315,28 @@ In \eqref{eq1.1.59} we consider a linear operation on the function $f(\bm r)$. N
 V(\hat{\bm r}+\bm a)=\hat{U}(\bm a)V(\hat{\bm r})[\hat{U}(\bm a)]^\dagger=\hat{U}(\bm a)V(\hat{\bm r})\hat{U}(-\bm a)
 \ee
 The meaning of this equation becomes evident by acting on a function $f(\bm r)$
-\be\begin{split}
+\be\label{eq1.1.62}\begin{split}
 [\hat{U}(\bm a&)V(\hat{\bm r})\hat{U}(-\bm a)]f(\bm r)=[\hat{U}(\bm a)V(\hat{\bm r})]f(\bm r-\bm a)\\
 &=\hat{U}(\bm a)[V(\bm r)f(\bm {r-a})]=V(\bm{r+a})f(\bm r)=V(\hat{\bm r}+\bm a)f(\bm r)
 \end{split}\ee
 Since $f(\bm r)$ is arbitrary, we obtain \eqref{eq1.1.61}. Furthermore, because the operator $\hat{U}(\bm a)$ depends only on $\hat{\bm p}$, 
-\be
+\be\label{eq1.1.63}
 \hat{U}(\bm a)\hat{\bm p}\hat{U}(-\bm a)=\hat{\bm p}
 \ee
 can be proved easily. Therefore, the kinetic energy is invariant:
-\be
+\be\label{eq1.1.64}
 \hat{U}(\bm a)\frac{\hat{\bm p}^2}{2m}[\hat{U}(\bm a)]^\dagger=\frac{\hat{\bm p}^2}{2m}
 \ee
 Let us suppose that the system is invariant under translation. In our case, this means that the potential is independent of the position, $V(\hat{\bm r}+\bm\alpha)=V(\hat{\bm r})$. Then, we can write
-\be
+\be\label{eq1.1.65}
 \hat{U}(\bm a)\hat{H}[\hat{U}(\bm a)]^{-1}=\hat{H}
 \ee
 Since $\bm a$ is an arbitrary real vector, we can choose it infinitesimally small and write the power series
-\be\label{eq1.1.65}
+\be\label{eq1.1.66}
 \hat{U}(\pm\bm a)\simeq\hat{1}\pm\frac{\ii}{\hbar}\bm a\cdot\hat{\bm p}.
 \ee
 Then we obtain from \eqref{eq1.1.65}
-\be
+\be\label{eq1.1.67}
 [\bm a\cdot\hat{\bm p},\hat{H}]=0.
 \ee
 Because $\bm a$ is an arbitrary infinitesimal vector, we can conclude
@@ -344,15 +344,15 @@ Because $\bm a$ is an arbitrary infinitesimal vector, we can conclude
 [\hat{p}_\alpha,\hat{H}]=0.
 \ee
 Conversely, it is possible to deduce \eqref{eq1.1.65} from \eqref{eq1.1.68}. In order to do so, let $\lambda$ be an arbitrary real parameter, then we define
-\be
+\be\label{eq1.1.69}
 \hat{H}(\lambda)=\hat{U}(\lambda\bm a)\hat{H}\hat{U}(-\lambda\bm a)
 \ee
 Differentiating with respect to $\lambda$, with
-\be
+\be\label{eq1.1.70}
 \frac{\partial\hat{U}(\pm\lambda\bm a)}{\partial\lambda}=\pm\frac{\ii}{\hbar}\bm a\cdot\hat{\bm p}\hat{U}(\pm\lambda\bm a)=\frac{\ii}{\hbar}\hat{U}(\pm\lambda\bm a)\bm a\cdot\hat{\bm p}
 \ee
 we obtain
-\be
+\be\label{eq1.1.71}
 \frac{\partial\hat{H}(\lambda)}{\partial\lambda}=\frac{\ii}{\hbar}\hat{U}(\lambda\bm a)[\bm a\cdot\hat{\bm p},\hat{H}]\hat{U}(-\lambda\bm a).
 \ee
 Owing to \eqref{eq1.1.68}, the right-hand side is zero, therefore $\hat H(\lambda)$ does not depend on $\lambda$, and we regain \eqref{eq1.1.65} from $\hat{H}(1)=\hat{H}(0)$. \\

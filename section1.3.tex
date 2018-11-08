@@ -6,7 +6,8 @@
 We return to a single-particle system. The Heisenberg equation of motion, describing the time evolution of a particle at position $\hat{\bm r}$ having momentum $\hat{\bm p}$, is given by
 \be
 \ii\hbar\frac{\dd}{\dd t}\hat{\bm r}(t)=[\hat{\bm r}(t),\hat H]=\left.\ii\hbar\frac{\partial H(\bm r,\bm p)}{\partial\bm p}\right|_{\substack{\bm r=\hat{\bm r}(t)\\ \bm p=\hat{\bm p}(t)}},
-\ee\be
+\ee
+\be
 \ii\hbar\frac{\dd}{\dd t}\hat{\bm p}(t)=-[\hat{\bm r}(t),\hat H]=\left.\ii\hbar\frac{\partial H(\bm r,\bm p)}{\partial\bm r}\right|_{\substack{\bm r=\hat{\bm r}(t)\\ \bm p=\hat{\bm p}(t)}}.
 \ee
 Here, $H(\bm r,\bm p)$ is a function of $\bm r$ and $\bm p$, from which the Hamiltonian $\hat H$ is obtained by substituting $\bm r \to\hat{\bm r}(t)$ and $\bm p \to\hat{\bm p}(t)$. The above equation has the same structure as the classical canonical equations of the Hamiltonian:
@@ -25,12 +26,133 @@ We define the action $S$ as
 S=\int\dd tL(\bm r(t),\dot{\bm r}(t);\bm p(t))
 \ee
 The variation of $S$ in $\bm r$ and $\bm p$ is given by
-\be\begin{split}
+\be\label{eq1.3.5}\begin{split}
 \delta S&=\int\dd t\left\{\delta\bm r(t)\cdot\frac{\partial L}{\partial\bm r(t)}+\delta\dot{\bm r}(t)\cdot\frac{\partial L}{\partial\dot{\bm r}(t)}+\delta\bm p(t)\cdot\frac{\partial L}{\partial\bm p(t)}\right\}\\
 	    &=\int\dd t\left\{\delta\bm r(t)\cdot\left[\frac{\partial L}{\partial\bm r(t)}-\frac{\dd}{\dd t}\frac{\partial L}{\partial\dot{\bm r}(t)}\right]+\delta\bm p(t)\cdot\frac{\partial L}{\partial\bm p(t)}\right\}.
 \end{split}\ee
 (The reader unfamiliar with the variation principle or functional derivative is referred to Appendix \ref{secapb}.) By requiring that the variation 6S must be zero for arbitrary transformations 6r(t) and Sp(t), we obtain directly \eqref{eq1.3.1'} and \eqref{eq1.3.2'}.
-So, what might be the variation principle corresponding to the field equation \eqref{eq1.2.31}? We know already the analogy $\hat{\bm r}\leftrightarrow \hat\psi(\bm r)$ and $\hat{\bm p} \leftrightarrow \hat\psi^\dagger(\bm r)$. From \eqref{eq1.3.3} we can deduce that the Lagrangian must be
+
+So, what might be the variation principle corresponding to the field equation \eqref{eq1.2.31}? We know already the analogy $\hat{\bm r}\leftrightarrow \hat\psi(\bm r)$ and $\hat{\bm p} \leftrightarrow \ii\hbar\hat\psi^\dagger(\bm r)$. From \eqref{eq1.3.3} we can deduce that the Lagrangian must be
+\be
+L(\{\psi(\bm r)\},\{\dot{\psi}(\bm r)\},\{\psi^\dagger(\bm r)\})=\int\ii\hbar\psi^\dagger(\bm r)\dot{\psi}(\bm r)\dd\bm r-H(\psi(\bm r),\psi^\dagger(\bm r)).
+\ee
+We write for the Lagrange density $\mathcal{L}$
+\be\label{eq1.3.7}\begin{split}
+\mathcal{L}(\{\phi_A&(x)\},\{\partial_\mu\phi_A(x)\})=\ii\hbar\psi^\dagger(\bm r, t)\dot{\psi}(\bm r,t)\\
+-&\frac{\hbar^2}{2m}[\nabla\psi^\dagger(\bm r,t)][\nabla\psi(\bm r,t)]-V(\bm r)\psi^\dagger(\bm r,t)\psi(\bm r,t)\\
+-&\frac{1}{2}\int\dd\bm r'\psi^\dagger(\bm r, t)\psi^\dagger(\bm r', t)v(\bm r-\bm r')\psi(\bm r',t)\psi(\bm r,t)
+\end{split}\ee
+We now introduce the combined notation $x$ for the space coordinate $\bm r$ and the time coordinate $t$, defining the $x^\mu$ components to be $(t,\bm r)$. The space-time coordinates with lower index $x_\mu$ are defined to be $(f, -\bm r)$. The partial differential operator $\partial_\mu$ corresponding to these coordinate components is given by $\partial _ { \mu } = \partial / \partial x ^ { \mu } = ( \partial / \partial t , \nabla )$. We wrote the label $A$ to distinguish between different complex fields $\varphi _ { A } ( x )$; in the present case we write $\varphi _ { A = 1 } = \psi ( \boldsymbol { r } , t )$ and $\varphi _ { A = 2 } = \psi ^ { \dagger } ( \boldsymbol { r } , t )$. The action $S$ can be expressed in terms of $L$ or $\mathcal{L}$ as
+\be\label{eq1.3.8}
+\begin{aligned} S & = \int \mathrm { d } t L \left( \left\{ \varphi _ { A } ( x ) \right\} , \left\{ \partial _ { \mu } \varphi _ { A } ( x ) \right\} \right) \\ & = \int \mathrm { d } ^ { 4 } x \mathcal { L } \left( \left\{ \varphi _ { A } ( x ) \right\} , \left\{ \partial _ { \mu } \varphi _ { A } ( x ) \right\} \right) \end{aligned}
+\ee
+As in \eqref{eq1.3.5}, by taking the variation
+\be\label{eq1.3.9}
+\begin{aligned} \delta S & = \int \mathrm { d } ^ { 4 } x \left\{ \delta \varphi _ { A } ( x ) \frac { \delta S } { \delta \varphi _ { A } ( x ) } + \delta \left( \delta _ { \mu } \varphi _ { A } ( x ) \right) \frac { \delta S } { \delta \left( \partial _ { \mu } \varphi _ { A } ( x ) \right) } \right\} \\ & = \int \mathrm { d } ^ { 4 } x \delta \varphi _ { A } ( x ) \left\{ \frac { \delta S } { \delta \varphi _ { A } ( x ) } - \partial _ { \mu } \left( \frac { \delta S } { \delta \left( \partial _ { \mu } \varphi _ { A } ( x ) \right) } \right) \right\} \end{aligned}
+\ee
+and requiring that $\delta S = 0$, we obtain
+\be\label{eq1.3.10}
+\frac { \delta S } { \delta \varphi _ { A } ( x ) } - \partial _ { \mu } \left( \frac { \delta S } { \delta \left( \partial _ { \mu } \varphi _ { A } ( x ) \right) } \right) = 0
+\ee
+From \eqref{eq1.3.7}, for the case $A = 2$ we obtain
+\[
+\begin{split} 
+\mathrm { i } \hbar \dot { \psi } ( \boldsymbol { r } , t ) - &V ( \boldsymbol { r } ) \psi ( \boldsymbol { r } , t ) - \int \mathrm { d } \boldsymbol { r } ^ { \prime } \psi ^ { \dagger } \left( \boldsymbol { r } ^ { \prime } , t \right) v \left( \boldsymbol { r } - \boldsymbol { r } ^ { \prime } \right) \psi \left( \boldsymbol { r } ^ { \prime } , t \right) \psi ( \boldsymbol { r } , t ) 
+ \\  
+ - \nabla \cdot & \left\{  - \dfrac { \hbar ^ { 2 } } { 2 \boldsymbol { m } } \nabla \psi ( \boldsymbol { r } , t ) \right\} = 0  \end{split}
+\]
+By rearranging this equation, we regain equation \eqref{eq1.2.31}.
+
+Next, we examine the symmetry operations in quantum field theory. Corresponding to the transformation $\hat { \boldsymbol { r } } \rightarrow \hat { \boldsymbol { r } } + \boldsymbol { \alpha }$ in single-particle quantum mechanics, we consider the transformation
+\begin{align}\label{eq1.3.11}
+\varphi _ { A } ( x ) &\to \varphi _ { A } ^ { \prime } ( x ) = \varphi _ { A } ( x ) + \delta \varphi _ { A } ( x )\\
+\label{eq1.3.12}
+\partial _ { \mu } \varphi _ { A } ( x ) &\to \partial _ { \mu } \varphi _ { A } ^ { \prime } ( x ) = \partial _ { \mu } \varphi _ { A } ( x ) + \partial _ { \mu } \left( \delta \varphi _ { A } ( x ) \right)
+\end{align}
+As an explicit example, we consider a phase transformation with constant phase of the field operator
+\be\label{eq1.3.13}
+\begin{aligned} \varphi _ { 1 } ( x )  = \psi ( x ) &\to \psi ^ { \prime } ( x ) = \mathrm { e } ^ { - \mathrm { i } a } \psi ( x ) \simeq \psi ( x ) - \mathrm { i } a \psi ( x ) \\ \varphi _ { 2 } ( x ) = \psi ^ { \dagger } ( x ) &\to \psi ^ { \prime \dagger } ( x ) = \mathrm { e } ^ { + \mathrm { i } a } \psi ^ { \dagger } ( x ) \simeq \psi ^ { \dagger } ( x ) + \mathrm { i } a \psi ^ { \dagger } ( x ) \end{aligned}
+\ee
+Under the transformation \eqref{eq1.3.11} and \eqref{eq1.3.12}, the action $S$ that we assume now to be bounded to a space-time region $\Omega$ transforms as
+\be\label{eq1.3.14}
+\begin{aligned} S \rightarrow S ^ { \prime } = & \int _ { \Omega } \mathrm { d } ^ { 4 } x \mathcal { L } \left( \left\{ \varphi _ { A } ( x ) + \delta \varphi _ { A } ( x ) \right\} , \left\{ \partial _ { \mu } \varphi _ { A } ( x ) + \partial _ { \mu } \left( \delta \varphi _ { A } ( x ) \right) \right\} \right) \\ = & S + \int _ { \Omega } \mathrm { d } ^ { 4 } x \left\{ \delta \varphi _ { A } ( x ) \frac { \delta S } { \delta \varphi _ { A } ( x ) } + \partial _ { \mu } \left( \delta \varphi _ { A } ( x ) \right) \frac { \delta S } { \delta \left( \partial _ { \mu } \varphi _ { A } ( x ) \right) } \right\} \\ = & S + \int _ { \Omega } \mathrm { d } ^ { 4 } x \delta \varphi _ { A } ( x ) \left[ \frac { \delta S } { \delta \varphi _ { A } ( x ) } - \partial _ { \mu } \left( \frac { \delta S } { \delta \left( \partial _ { \mu } \varphi _ { A } ( x ) \right) } \right) \right] \\ & + \int _ { \Omega } \mathrm { d } ^ { 4 } x \partial _ { \mu } \left[ \frac { \delta S } { \delta \left( \partial _ { \mu } \varphi _ { A } ( x ) \right) } \delta \varphi _ { A } ( x ) \right] \end{aligned}
+\ee
+Assuming that $\phi_A$ obeys the equation of motion \eqref{eq1.3.10}, only the third term of the previous expression contributes to the transformation of $S$. In the case that the action $S$ is invariant under the transformation \eqref{eq1.3.11} and \eqref{eq1.3.12}, in every arbitrary region $\Omega$, we obtain
+\be\label{eq1.3.15}
+\partial _ { \mu } \left[ \frac { \delta S } { \delta \left( \partial _ { \mu } \varphi _ { A } ( x ) \right) } \delta \varphi _ { A } ( x ) \right] = 0. 
+\ee
+Defining a current $J ^ { \mu }$ as
+\be\label{eq1.3.16}
+J ^ { \mu } \propto \frac { \delta S } { \delta \left( \partial _ { \mu } \varphi _ { A } ( x ) \right) } \delta \varphi _ { A } ( x ) 
+\ee
+then \eqref{eq1.3.15} becomes the current conservation law. 
+\be\label{eq1.3.17}
+\partial _ { \mu } J ^ { \mu } = 0
+\ee
+We just deduced the Noether theorem (in its simplest form). ``The invariance of the action $S$ shows up in the symmetry under the transformation, and from this symmetry a current conservation law can be deduced.'' In the explicit example \eqref{eq1.3.13}, the transformation of the action integral $S$ under the phase transformation $\alpha$ can be written via the chain rule with $\psi^\dagger$ and $\psi$ as
+\be\label{eq1.3.18}
+J ^ { \mu } = \frac { \delta S } { \delta \left( \partial _ { \mu } \psi ^ { \dagger } ( x ) \right) } \frac { \partial \delta \psi ^ { \dagger } ( x ) } { \partial \alpha } + \frac { \delta S } { \delta \left( \partial _ { \mu } \psi ( x ) \right) } \frac { \partial \delta \psi ( x ) } { \partial \alpha }
+\ee
+Because the action is the integral in space and time of the Lagrangian density \eqref{eq1.3.7}, we obtain
+\be\label{eq1.3.19}
+\begin{aligned} J ^ { 0 } & = \frac { \delta S } { \delta \dot { \psi } ^ { \dagger } ( x ) } \mathrm { i } \psi ^ { \dagger } ( x ) + \frac { \delta S } { \delta \dot { \psi } ( x ) } ( - \mathrm { i } \psi ( x ) ) \\ & = 0 + \mathrm { i } \hbar \psi ^ { \dagger } ( x ) ( - \mathrm { i } \psi ( x ) ) \\ & = \hbar \psi ^ { \dagger } ( x ) \psi ( x ) = \hbar n ( x ) \quad ( \mu = 0 ) \end{aligned}
+\ee
+\be\label{eq1.3.20}
+\begin{aligned} J ^ { \alpha } & = \frac { \delta S } { \delta \left( \partial _ { \alpha } \psi ^ { \dagger } ( x ) \right) } \mathrm { i } \psi ^ { \dagger } ( x ) + \frac { \delta S } { \delta \left( \partial _ { \alpha } \psi ( x ) \right) } ( - \mathrm { i } \psi ( x ) ) \\ & = \left( - \frac { \hbar ^ { 2 } } { 2 m } \partial _ { \alpha } \psi ( x ) \right) \mathrm { i } \psi ^ { \dagger } ( x ) + \left( - \frac { \hbar ^ { 2 } } { 2 m } \partial _ { \alpha } \psi ^ { \dagger } ( x ) \right) ( - \mathrm { i } \psi ( x ) ) \\ & = \frac { \hbar ^ { 2 } } { 2 m i } \left\{ \psi ^ { \dagger } ( x ) \partial _ { \alpha } \psi ( x ) - \left[ \partial _ { \alpha } \psi ^ { \dagger } ( x ) \right] \psi ( x ) \right\} \\ & = \hbar j ^ { \alpha } ( x ) \quad ( \mu = \alpha = 1,2,3 ) \end{aligned}
+\ee
+Here, $n(x)$ is the particle density, $\bm{j}(x)$ is the particle current density, and \eqref{eq1.3.17} becomes the well-known continuity equation:
+\be\label{eq1.3.21}
+\frac { \partial n ( x ) } { \partial t } + \nabla \cdot j ( x ) = 0
+\ee
+The number of particles $N_V(t)$ in a three-dimensional volume $V$ is given by
+\be\label{eq1.3.22}
+N _ { V } ( t ) = \int _ { V } n ( \boldsymbol { r } , t ) \mathrm { d } ^ { 3 } \boldsymbol { r }
+\ee
+and owing to \eqref{eq1.3.21}, its time derivative is given by
+\be\label{eq1.3.23}
+\frac { \mathrm { d } N _ { V } ( t ) } { \mathrm { d } t } = \int _ { V } \frac { \partial n ( \boldsymbol { r } , t ) } { \partial t } \mathrm { d } ^ { 3 } \boldsymbol { r } = - \int _ { V } \nabla \cdot \boldsymbol { j } ( \boldsymbol { r } , t ) \mathrm { d } ^ { 3 } \boldsymbol { r } = - \int _ { \partial V } \mathrm { d } \boldsymbol { S } \cdot \boldsymbol { j } ( \boldsymbol { r } , t )
+\ee
+Here, we re-expressed the volume integral as a surface integral by using Gauss’s theorem. For the case when $V$ is the whole space, $N_V(t)$ becomes the total particle number $N(t)$, and $\mathrm{d}V$ becomes the boundary at infinity, where $\boldsymbol { j } ( \boldsymbol { r } , t )$ is zero and therefore the surface integral vanishes. We conclude that the total particle number $N(t)$ obeys the conservation law $\mathrm { d } N ( t ) / \mathrm { d } t = 0$. The conservation law in $N$ that we obtained from the symmetry in the phase is analogous to the conservation law for $p$ that we deduced from the translational symmetry in $x$.
+
+Last, we discuss the generators of transformations in field theory. Up to now. we have performed functional derivatives of $\psi , \psi ^ { \dagger } , N$ and $\boldsymbol { j }$ in a formal manner, ignoring the fact that we are dealing with operators. Now, we need to recall the properties of operators. We define $\hat { U } ( \{ \delta \psi ( x ) \} )$ as follows:
+\be\label{eq1.3.24}
+\begin{aligned} \hat { U } ( \{ \delta \psi \} ) & = \exp \left[ \frac { \mathrm { i } } { \hbar } \int \mathrm { d } \boldsymbol { r } \hat {\mathit{\Pi}} ( \boldsymbol { r } ) \delta \psi ( \boldsymbol { r } ) \right] \\ & \equiv \exp \left[ \frac { \mathrm { i } } { \hbar } \hat { Q } ( \{ \delta \psi \} ) \right] \end{aligned}
+\ee
+We define $\hat {\mathit{\Pi}} ( \boldsymbol { r } )$ to be the canonical conjugate of $\hat { \psi }$
+\be\label{eq1.3.25}
+\hat {\mathit{\Pi}} ( \boldsymbol { r } ) = \frac { \delta S } { \delta \left( \partial _ { t } \hat { \psi } ( \boldsymbol { r } ) \right) }
+\ee
+and assume the commutation relation
+\be\label{eq1.3.26}
+\left[ \hat { \psi } ( \boldsymbol { r } ) , \hat {\mathit{\Pi}} \left( \boldsymbol { r } ^ { \prime } \right) \right] = \mathrm { i } \hbar \delta \left( \boldsymbol { r } - \boldsymbol { r } ^ { \prime } \right)
+\ee
+From \eqref{eq1.3.7} we obtain
+\be\label{eq1.3.27}
+\hat {\mathit{\Pi}} ( \boldsymbol { r } ) = \mathrm { i } \hbar \hat { \psi } ^ { \dagger } ( \boldsymbol { r } )
+\ee
+and therefore \eqref{eq1.3.26} is identical to \eqref{eq1.2.17}. 
+
+It is possible to show that
+\be\label{eq1.3.28}
+\hat { U } ( \{ \delta \psi ( \boldsymbol { r } ) \} ) \hat { \psi } ( \boldsymbol { r } ) \hat { U } ( \{ - \delta \psi ( \boldsymbol { r } ) \} ) = \hat { \psi } ( \boldsymbol { r } ) + \delta \psi ( \boldsymbol { r } )
+\ee
+holds. The proof corresponds to the discussion concerning \eqref{eq1.1.69}-\eqref{eq1.1.71}. Starting with the definition
+\be\label{eq1.3.29}
+\hat { \psi } ( \boldsymbol { r } : \lambda ) = \hat { U } ( \{ \lambda \delta \psi ( \boldsymbol { r } ) \} ) \hat { \psi } ( \boldsymbol { r } ) \hat { U } ( \{ - \lambda \delta \psi ( \boldsymbol { r } ) \} )
+\ee
+we obtain
+\be\label{eq1.3.30}
+\begin{aligned} \frac { \partial \hat { \psi } ( \boldsymbol { r } ; \lambda ) } { \partial \lambda } = & \frac { \mathrm { i } } { \hbar } \exp \left[ \frac { \mathrm { i } } { \hbar } \lambda \hat { Q } ( \{ \delta \psi \} ) \right] [ \hat { Q } ( \{ \delta \psi \} ) , \hat { \psi } ( \boldsymbol { r } ) ] \\ & \times \exp \left[ - \frac { \mathrm { i } } { \hbar } \lambda \hat { Q } ( \{ \delta \psi \} ) \right] \end{aligned}
+\ee
+and
+\be\label{eq1.3.31}
+[ \hat { Q } ( \{ \delta \psi \} ) , \hat { \psi } ( \boldsymbol { r } ) ] = \int \mathrm { d } \boldsymbol { r } ^ { \prime } \left[ \hat {\mathit{\Pi}} \left( \boldsymbol { r } ^ { \prime } \right) , \hat { \psi } ( \boldsymbol { r } ) \right] \delta \psi \left( \boldsymbol { r } ^ { \prime } \right) = - \mathrm { i } \hbar \delta \psi ( \boldsymbol { r } )
+\ee
+Because $\delta \psi ( \boldsymbol { r } )$ is simply a function, \eqref{eq1.3.30} becomes
+\be\label{eq1.3.32}
+\frac { \partial \hat { \psi } ( \boldsymbol { r } ; \lambda ) } { \partial \lambda } = \delta \psi ( \boldsymbol { r } )
+\ee
+Integrating this equation in $\lambda$ from zero to one, we obtain \eqref{eq1.3.28}. Therefore, \eqref{eq1.3.24} acts on $\hat { \psi } ( \boldsymbol { r } )$ by shifting it by $\delta \psi ( \boldsymbol { r } )$, and therefore it is clear that $\hat {\mathit{\Pi}}$ given in \eqref{eq1.3.25} is the generator of the transformation. 
 
 
 

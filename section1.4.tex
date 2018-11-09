@@ -1,0 +1,103 @@
+%!TEX root = ./main.tex
+%!TEX encoding = UTF-8 Unicode
+
+\section{Quantization of the Electromagnetic Field}
+In the previous section we demonstrated that the invariance under the phase transformation \eqref{eq1.3.13} of the operators leads to the conservation law of the particle number $\hat { N }$. We assumed that the angle $\alpha$ is constant and does not depend either on the space coordinate $r$ or on time $t$ .This kind of transformation is called a global gauge transformation. In this chapter we discuss the more general case where invariance under local gauge transformations is required, that is, when $\alpha$ depends on $x = ( r , t )$. 
+
+Unfortunately, the Lagrange density \eqref{eq1.3.7} is not invariant under this transformation. Problematic is the term with derivative
+\be\label{eq1.4.1}
+\partial _ { \mu } \left( \psi \mathrm { e } ^ { - \mathrm { i } \alpha } \right) = \mathrm { e } ^ { - \mathrm { i } \alpha } \left( \partial _ { \mu } \psi - \mathrm { i } \partial _ { \mu } \alpha \cdot \psi \right)
+\ee
+
+\be\label{eq1.4.2}
+A _ { \mu } \rightarrow A _ { \mu } + \frac { \hbar } { e } \partial _ { \mu } \alpha
+\ee
+
+\be\label{eq1.4.3}
+\boldsymbol { J } ( x ) = - \frac { e \hbar } { 2 m \mathrm { i } } \left( \psi ^ { \dagger } \left( \nabla + \frac { \mathrm { i } e } { \hbar } \boldsymbol { A } \right) \psi - \left[ \left( \nabla - \frac { \mathrm { i } e } { \hbar } \boldsymbol { A } \right) \psi ^ { \dagger } \right] \psi \right)
+\ee
+
+\be\label{eq1.4.4}
+\mathcal { L } _ { \mathrm { em } } = - \frac { 1 } { 16 \pi } F _ { \mu \nu } F ^ { \mu \nu }
+\ee
+
+\be\label{eq1.4.5}
+\begin{aligned} \mathcal { L } _ { \text { total } } = & \text { i } \hbar \psi ^ { \dagger } \left( \dot { \psi } + \mathrm { i } \frac { e } { \hbar } A _ { 0 } \psi \right) - \frac { \hbar ^ { 2 } } { 2 m } \left[ \left( \nabla - \frac { i e } { \hbar } \boldsymbol { A } \right) \psi ^ { \dagger } \right] \left[ \left( \nabla + \frac { i e } { \hbar } \boldsymbol { A } \right) \psi \right] \\ & - \frac { 1 } { 2 } \int \mathrm { d } \boldsymbol { r } ^ { \prime } \psi ^ { \dagger } ( \boldsymbol { r } ) \psi ^ { \dagger } \left( \boldsymbol { r } ^ { \prime } \right) v \left( \boldsymbol { r } - \boldsymbol { r } ^ { \prime } \right) \psi \left( \boldsymbol { r } ^ { \prime } \right) \psi ( \boldsymbol { r } ) - \frac { 1 } { 16 \pi } F _ { \mu \nu } F ^ { \mu \nu } \end{aligned}
+\ee
+
+\be\label{eq1.4.6}
+- \nabla ^ { 2 } A _ { 0 } ( x ) + \frac { \partial } { \partial t } \nabla \cdot \boldsymbol { A } ( x ) = - 4 \pi \rho ( x )
+\ee
+
+\be\label{eq1.4.7}
+\left( \nabla ^ { 2 } - \frac { \partial ^ { 2 } } { \partial t ^ { 2 } } \right) \boldsymbol { A } ( x ) + \frac { \partial } { \partial t } \nabla A _ { 0 } ( x ) - \nabla ( \nabla \cdot \boldsymbol { A } ( x ) ) = - 4 \pi \boldsymbol { J } ( x )
+\ee
+
+\be\label{eq1.4.8}
+\nabla \cdot \boldsymbol { A } = 0
+\ee
+
+\be\label{eq1.4.9}
+- \nabla ^ { 2 } A _ { 0 } ( x ) = - 4 \pi \rho ( x )
+\ee
+
+\be\label{eq1.4.10}
+\left( \nabla ^ { 2 } - \frac { \partial ^ { 2 } } { \partial t ^ { 2 } } \right) A ( x ) = - 4 \pi J ( x ) - \frac { \partial } { \partial t } \nabla A _ { 0 } ( x )
+\ee
+
+\be\label{eq1.4.11}
+- A _ { 0 } ( x ) = \int \mathrm { d } ^ { 3 } \boldsymbol { r } ^ { \prime } \frac { \rho \left( \boldsymbol { r } ^ { \prime } , t \right) } { \left| \boldsymbol { r } - \boldsymbol { r } ^ { \prime } \right| }
+\ee
+
+\begin{subequations} 
+\begin{alignat}{2}
+\label{eq1.4.12a}
+&\mathit{\Pi} ^ { 0 } = \frac { \partial \mathcal { L } } { \partial \dot { A } _ { 0 } } = 0  \\
+\label{eq1.4.12b}
+\bm{\mathit{\Pi}} = \frac { \partial \mathcal { L } } { \partial \dot { \boldsymbol { A } } } = &+ \frac { 1 } { 4 \pi } \left[ - \nabla A ^ { 0 } + \frac { \partial \boldsymbol { A } } { \partial t } \right] = - \frac { \boldsymbol { E } } { 4 \pi }  
+\end{alignat}
+\end{subequations}
+
+\be\label{eq1.4.13}
+\mathcal { L } _ { \mathrm { em } } = \frac { 1 } { 8 \pi } \left\{ \dot { \boldsymbol { A } } ^ { 2 } - ( \nabla \times \boldsymbol { A } ) ^ { 2 } \right\}
+\ee
+
+\be\label{eq1.4.14}
+\begin{split} 
+\mathcal { H } _ { \mathrm { em } } & = \bm{\mathit{\Pi}} \cdot \dot { \boldsymbol { A } } - \mathcal { L } _ { \mathrm { em } } \\ 
+& = \frac { 1 } { 8 \pi } \left\{ \dot { \boldsymbol { A } } ^ { 2 } + ( \nabla \times \boldsymbol { A } ) ^ { 2 } \right\} \\ 
+& = \frac { 1 } { 8 \pi } \left\{ \boldsymbol { E } ^ { 2 } + \boldsymbol { H } ^ { 2 } \right\}
+\end{split}
+\ee
+
+\be\label{eq1.4.15}
+\left[ A _ { i } ( \boldsymbol { r } , t ) , \mathit{\Pi}_ { j } \left( \boldsymbol { r } ^ { \prime } , t \right) \right] = \mathrm { i } \hbar \delta _ { i , j } \delta ^ { 3 } \left( \boldsymbol { r } - \boldsymbol { r } ^ { \prime } \right)
+\ee
+
+\be\label{eq1.4.16}
+\left[ \nabla \cdot \boldsymbol { A } ( \boldsymbol { r } , t ) , \mathit{\Pi}_ { j } \left( \boldsymbol { r } ^ { \prime } , t \right) \right] = \mathrm { i } \hbar \partial _ { j } \delta ^ { 3 } \left( \boldsymbol { r } - \boldsymbol { r } ^ { \prime } \right)
+\ee
+
+\be\label{eq1.4.17}
+\left[ A _ { i } ( \boldsymbol { r } , t ) , \mathit{\Pi}_ { j } \left( \boldsymbol { r } ^ { \prime } , t \right) \right] = \mathrm { i } \hbar \left( \delta _ { i , j } - \frac { \partial _ { i } \partial _ { j } } { \nabla ^ { 2 } } \right) \delta ^ { 3 } \left( \boldsymbol { r } - \boldsymbol { r } ^ { \prime } \right)
+\ee
+
+\[\sum _ { i } \mathrm { i } k _ { i } \left( \delta _ { i , j } - k _ { i } k _ { j } / k ^ { 2 } \right) = \mathrm { i } k _ { j } - \mathrm { i } k _ { j } = 0 \]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

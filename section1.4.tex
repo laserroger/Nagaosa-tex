@@ -8,30 +8,44 @@ Unfortunately, the Lagrange density \eqref{eq1.3.7} is not invariant under this 
 \be\label{eq1.4.1}
 \partial _ { \mu } \left( \psi \mathrm { e } ^ { - \mathrm { i } \alpha } \right) = \mathrm { e } ^ { - \mathrm { i } \alpha } \left( \partial _ { \mu } \psi - \mathrm { i } \partial _ { \mu } \alpha \cdot \psi \right)
 \ee
+where a second term containing $\partial _ { \mu } \alpha$ emerges. Now, a derivative connects the field value at two neighbouring points $x$ and $x + \mathrm{d}x$; in space and time, and \eqref{eq1.4.1} shows that by performing different phase transformations at the two points, then obviously the result will change. 
 
+In order to make $\mathcal { L }$ invariant, it would be sufficient to introduce another field that links these two points, and to perform simultaneously to \eqref{eq1.3.13} a transformation of this new field so that the phases of both fields annihilate each other. The field that is introduced in this manner is called a gauge field. 
+
+A representative example is the electromagnetic field $A_\mu$, however, also in many other cases gauge fields emerge. In solid state physics, gauge fields play an important role for spin glasses, quantum spin systems, strongly correlated electronic systems, the quantum Hall effect and liquid crystals. 
+
+Roughly speaking, gauge fields appear when some constraints or frustration prevent the system from stabilizing in a low energy state. Hopefully, the reader will understand this intuitive picture when dealing with the concrete examples later in this book. Let us now briefly proceed with the mathematical concepts.
+
+We now consider the electromagnetic field $A_\mu$ as a gauge field and set the velocity of light $c$ equal to 1. In order to obtain a locally gauge invariant system, the terms $\partial _ { \mu } \psi$ and $\partial _ { \mu } \psi ^ { \dagger }$ must be replaced by $\left( \partial _ { \mu } + \mathrm { i } ( e / \hbar ) A _ { \mu } \right) \psi$ and $\left( \partial _ { \mu } - \mathrm { i } ( e \hbar ) A _ { \mu } \right) \psi ^ { \dagger }$ respectively, and corresponding to \eqref{eq1.3.13}, the transformation of the gauge field must be 
 \be\label{eq1.4.2}
 A _ { \mu } \rightarrow A _ { \mu } + \frac { \hbar } { e } \partial _ { \mu } \alpha
 \ee
-
+Here, $- e$ is the charge of the electron. Owing to this replacement, the current $\boldsymbol { J } ( x )$ 
 \be\label{eq1.4.3}
 \boldsymbol { J } ( x ) = - \frac { e \hbar } { 2 m \mathrm { i } } \left( \psi ^ { \dagger } \left( \nabla + \frac { \mathrm { i } e } { \hbar } \boldsymbol { A } \right) \psi - \left[ \left( \nabla - \frac { \mathrm { i } e } { \hbar } \boldsymbol { A } \right) \psi ^ { \dagger } \right] \psi \right)
 \ee
+The conservation law for this current is similar to \eqref{eq1.3.21} with charge density $\rho ( x ) = - e \psi ^ { \dagger } ( x ) \psi ( x )$. Equation \eqref{eq1.3.21} was derived under the assumption that the phase is independent of x, and it can be assumed that a similar equation holds under the more severe local gauge invariance condition. This is indeed the case, all formulas up to \eqref{eq1.3.21} do still hold; however, we will not go into the details.
 
+Now, \eqref{eq1.4.2} is the gauge transformation that follows from the theory of electromagnetism, and we will now review the dynamics and the quantization of the electromagnetic field including this transformation. The Lagrangian of the electromagnetic field is given by
 \be\label{eq1.4.4}
 \mathcal { L } _ { \mathrm { em } } = - \frac { 1 } { 16 \pi } F _ { \mu \nu } F ^ { \mu \nu }
 \ee
+It is simple to see that $F _ { \mu \nu } = \partial A _ { \mu } / \partial x ^ { \nu } - \partial A _ { \nu } / \partial x ^ { \mu }$ and $F ^ { \mu \nu } = \partial A ^ { \mu } / \partial x _ { \nu } - \partial A ^ { \nu } / \partial x _ { \mu }$ are invariant under the gauge transformation \eqref{eq1.4.4}. Therefore, \eqref{eq1.4.4} is invariant under local gauge transformtions.
 
+Now, we write the full Lagrangian including \eqref{eq1.4.4} and the matter fields as
 \be\label{eq1.4.5}
 \begin{aligned} \mathcal { L } _ { \text { total } } = & \text { i } \hbar \psi ^ { \dagger } \left( \dot { \psi } + \mathrm { i } \frac { e } { \hbar } A _ { 0 } \psi \right) - \frac { \hbar ^ { 2 } } { 2 m } \left[ \left( \nabla - \frac { i e } { \hbar } \boldsymbol { A } \right) \psi ^ { \dagger } \right] \left[ \left( \nabla + \frac { i e } { \hbar } \boldsymbol { A } \right) \psi \right] \\ & - \frac { 1 } { 2 } \int \mathrm { d } \boldsymbol { r } ^ { \prime } \psi ^ { \dagger } ( \boldsymbol { r } ) \psi ^ { \dagger } \left( \boldsymbol { r } ^ { \prime } \right) v \left( \boldsymbol { r } - \boldsymbol { r } ^ { \prime } \right) \psi \left( \boldsymbol { r } ^ { \prime } \right) \psi ( \boldsymbol { r } ) - \frac { 1 } { 16 \pi } F _ { \mu \nu } F ^ { \mu \nu } \end{aligned}
 \ee
-
+Varying this equation with respect to $A _ { \mu }$ and requiring the result to vanish, we obtain (the derivation is left as an exercise for the reader)
 \be\label{eq1.4.6}
 - \nabla ^ { 2 } A _ { 0 } ( x ) + \frac { \partial } { \partial t } \nabla \cdot \boldsymbol { A } ( x ) = - 4 \pi \rho ( x )
 \ee
-
 \be\label{eq1.4.7}
 \left( \nabla ^ { 2 } - \frac { \partial ^ { 2 } } { \partial t ^ { 2 } } \right) \boldsymbol { A } ( x ) + \frac { \partial } { \partial t } \nabla A _ { 0 } ( x ) - \nabla ( \nabla \cdot \boldsymbol { A } ( x ) ) = - 4 \pi \boldsymbol { J } ( x )
 \ee
+These equations are the field equations. By setting $\boldsymbol { H } = \boldsymbol { \nabla } \times \boldsymbol { A }$ and $\boldsymbol { E }  = \nabla A _ { 0 } - \partial \boldsymbol { A } / \partial t$, two of the four Maxwell equations are automatically fulfilled, and inserting these expressions into the other two Maxwell equations, the above equations are regained. The fields $\boldsymbol { E }$ and $\boldsymbol { H }$ have six components; however, at this step the components are reduced to four.
+
+Equations \eqref{eq1.4.6} and \eqref{eq1.4.7} are complicated, so let us try to simplify them by using the freedom of gauge invariance \eqref{eq1.4.2} in sin appropriate manner. Here, we have many different possibilities, and because in the La- grangian used for solid state physics, Lorentz invariance is already broken, in many cases the so-called Coulomb (transverse) gauge is chosen, where the degrees of freedom of the electromagnetic field appear very clearly. By choosing a in \eqref{eq1.4.2} in such a way that $( \hbar / e ) \nabla ^ { 2 } \alpha = - \nabla A$ holds, owing to such a gauge transformation, we obtain
 
 \be\label{eq1.4.8}
 \nabla \cdot \boldsymbol { A } = 0

@@ -46,23 +46,23 @@ Varying this equation with respect to $A _ { \mu }$ and requiring the result to 
 These equations are the field equations. By setting $\boldsymbol { H } = \boldsymbol { \nabla } \times \boldsymbol { A }$ and $\boldsymbol { E }  = \nabla A _ { 0 } - \partial \boldsymbol { A } / \partial t$, two of the four Maxwell equations are automatically fulfilled, and inserting these expressions into the other two Maxwell equations, the above equations are regained. The fields $\boldsymbol { E }$ and $\boldsymbol { H }$ have six components; however, at this step the components are reduced to four.
 
 Equations \eqref{eq1.4.6} and \eqref{eq1.4.7} are complicated, so let us try to simplify them by using the freedom of gauge invariance \eqref{eq1.4.2} in sin appropriate manner. Here, we have many different possibilities, and because in the La- grangian used for solid state physics, Lorentz invariance is already broken, in many cases the so-called Coulomb (transverse) gauge is chosen, where the degrees of freedom of the electromagnetic field appear very clearly. By choosing a in \eqref{eq1.4.2} in such a way that $( \hbar / e ) \nabla ^ { 2 } \alpha = - \nabla A$ holds, owing to such a gauge transformation, we obtain
-
 \be\label{eq1.4.8}
 \nabla \cdot \boldsymbol { A } = 0
 \ee
-
+Here, $\alpha$ is determined uniquely when boundary conditions are imposed because of the uniqueness of the solution of the Poisson equation. Therefore, notice that in the Coulomb gauge, the gauge is totally fixed. With \eqref{eq1.4.8}, equations \eqref{eq1.4.6} and \eqref{eq1.4.7} become
 \be\label{eq1.4.9}
 - \nabla ^ { 2 } A _ { 0 } ( x ) = - 4 \pi \rho ( x )
 \ee
-
 \be\label{eq1.4.10}
 \left( \nabla ^ { 2 } - \frac { \partial ^ { 2 } } { \partial t ^ { 2 } } \right) A ( x ) = - 4 \pi J ( x ) - \frac { \partial } { \partial t } \nabla A _ { 0 } ( x )
 \ee
-
+Under the boundary condition $A _ { 0 } ( x ) \rightarrow 0$ for $r \rightarrow 0$, the solution of \eqref{eq1.4.9} is
 \be\label{eq1.4.11}
 - A _ { 0 } ( x ) = \int \mathrm { d } ^ { 3 } \boldsymbol { r } ^ { \prime } \frac { \rho \left( \boldsymbol { r } ^ { \prime } , t \right) } { \left| \boldsymbol { r } - \boldsymbol { r } ^ { \prime } \right| }
 \ee
+$A_0$ is not an independent field, but can be expressed in terms of the charge distribution of the matter field. Notice that no retardation effect occurs in \eqref{eq1.4.11}; $\rho$ at time $t$ determines $A _ { 0 }$ at time $t$. This is not an approximation, but an exact result in the Coulomb gauge. Finally, owing to the condition $\boldsymbol { \nabla } \cdot \boldsymbol { A } = 0$ that lowers the degrees of freedom once more, we are left with two degrees of freedom.
 
+Now, using \eqref{eq1.4.5}, we define the “momentum” conjugated to $A_\mu$
 \begin{subequations} 
 \begin{alignat}{2}
 \label{eq1.4.12a}
@@ -71,11 +71,11 @@ Equations \eqref{eq1.4.6} and \eqref{eq1.4.7} are complicated, so let us try to 
 \bm{\mathit{\Pi}} = \frac { \partial \mathcal { L } } { \partial \dot { \boldsymbol { A } } } = &+ \frac { 1 } { 4 \pi } \left[ - \nabla A ^ { 0 } + \frac { \partial \boldsymbol { A } } { \partial t } \right] = - \frac { \boldsymbol { E } } { 4 \pi }  
 \end{alignat}
 \end{subequations}
-
+For simplicity, we now ignore the matter field and discuss only \eqref{eq1.4.4} $\mathcal { L } _ { \mathrm { em } }$. Then, in the Coulomb gauge, with $\rho ( \boldsymbol { r ^ { \prime } } , t ) = 0$ due to \eqref{eq1.4.11}, it follows that $A_0 = 0$ and
 \be\label{eq1.4.13}
 \mathcal { L } _ { \mathrm { em } } = \frac { 1 } { 8 \pi } \left\{ \dot { \boldsymbol { A } } ^ { 2 } - ( \nabla \times \boldsymbol { A } ) ^ { 2 } \right\}
 \ee
-
+The corresponding Hamiltonian density is given by
 \be\label{eq1.4.14}
 \begin{split} 
 \mathcal { H } _ { \mathrm { em } } & = \bm{\mathit{\Pi}} \cdot \dot { \boldsymbol { A } } - \mathcal { L } _ { \mathrm { em } } \\ 
@@ -83,21 +83,21 @@ Equations \eqref{eq1.4.6} and \eqref{eq1.4.7} are complicated, so let us try to 
 & = \frac { 1 } { 8 \pi } \left\{ \boldsymbol { E } ^ { 2 } + \boldsymbol { H } ^ { 2 } \right\}
 \end{split}
 \ee
-
+Here, the analogy $\boldsymbol { \Pi } \mapsto \boldsymbol { p }$ and $\boldsymbol { A } \mapsto \boldsymbol { r }$ is obvious, and this suggests that for quantization, the commutator between $\boldsymbol { A }$ and $\boldsymbol { \Pi }$ at the equal time $t$ should be introduced as
 \be\label{eq1.4.15}
 \left[ A _ { i } ( \boldsymbol { r } , t ) , \mathit{\Pi}_ { j } \left( \boldsymbol { r } ^ { \prime } , t \right) \right] = \mathrm { i } \hbar \delta _ { i , j } \delta ^ { 3 } \left( \boldsymbol { r } - \boldsymbol { r } ^ { \prime } \right)
 \ee
-
+However, we have a problem with \eqref{eq1.4.15}. By acting with nabla $\nabla$ with respect to $\boldsymbol { r }$ on both sides, we obtain
 \be\label{eq1.4.16}
 \left[ \nabla \cdot \boldsymbol { A } ( \boldsymbol { r } , t ) , \mathit{\Pi}_ { j } \left( \boldsymbol { r } ^ { \prime } , t \right) \right] = \mathrm { i } \hbar \partial _ { j } \delta ^ { 3 } \left( \boldsymbol { r } - \boldsymbol { r } ^ { \prime } \right)
 \ee
-
+The left-hand side vanishes due to $\boldsymbol { \nabla } \cdot \boldsymbol { A } = 0$; however, the right-hand side is not zero. In order to resolve the problem, we write instead of \eqref{eq1.4.15}
 \be\label{eq1.4.17}
 \left[ A _ { i } ( \boldsymbol { r } , t ) , \mathit{\Pi}_ { j } \left( \boldsymbol { r } ^ { \prime } , t \right) \right] = \mathrm { i } \hbar \left( \delta _ { i , j } - \frac { \partial _ { i } \partial _ { j } } { \nabla ^ { 2 } } \right) \delta ^ { 3 } \left( \boldsymbol { r } - \boldsymbol { r } ^ { \prime } \right)
 \ee
-
+If you are confused about a Laplacian appearing in the denominator, perform a Fourier transformation and interpret the right-hand side as $i \hbar ( \delta _ { i , j } - k _ { i } k _ { j } / k ^ { 2 } )$. The nabla operator in the $k$ -space leads to i$k _ { i } A _ { i }$
 \[\sum _ { i } \mathrm { i } k _ { i } \left( \delta _ { i , j } - k _ { i } k _ { j } / k ^ { 2 } \right) = \mathrm { i } k _ { j } - \mathrm { i } k _ { j } = 0 \]
-
+and the inconsistency is removed. As an exercise, you may show that with the commutator \eqref{eq1.4.17}, the Heisenberg equation deduced from the Hamiltonian \eqref{eq1.4.14} agrees with the field equation. 
 
 
 
